@@ -1,0 +1,26 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2019-07-04 19:42:06.283 UTC</timestamp>
+  <original>
+    <name>DSL_Pipeline</name>
+    <number>1</number>
+  </original>
+  <md5sum>6b8dba94cfa9eb47fe65672e022d43fc</md5sum>
+  <fileName>Docker image sha256:6b8dba94cfa9eb47fe65672e022d43fcc1972eecd17aa0ad39ef6f2fb9c91a26</fileName>
+  <usages/>
+  <facets>
+    <org.jenkinsci.plugins.docker.commons.fingerprint.DockerAncestorFingerprintFacet plugin="docker-commons@1.15">
+      <timestamp>1562269326231</timestamp>
+      <imageId>sha256:6b8dba94cfa9eb47fe65672e022d43fcc1972eecd17aa0ad39ef6f2fb9c91a26</imageId>
+      <usages>
+        <entry>
+          <string>DSL_Pipeline</string>
+          <ranges>1</ranges>
+        </entry>
+      </usages>
+      <ancestorImageIds class="sorted-set">
+        <string>sha256:baadc9c8b0ce3975092fea0c7f84390519b935b246ff118bb886a30b5b4e094c</string>
+      </ancestorImageIds>
+    </org.jenkinsci.plugins.docker.commons.fingerprint.DockerAncestorFingerprintFacet>
+  </facets>
+</fingerprint>

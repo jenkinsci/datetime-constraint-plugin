@@ -1,0 +1,65 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.33">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.13">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <org.jenkinsci.plugins.workflow.cps.EnvActionImpl plugin="workflow-cps@2.70">
+      <env class="tree-map"/>
+    </org.jenkinsci.plugins.workflow.cps.EnvActionImpl>
+  </actions>
+  <queueId>9</queueId>
+  <timestamp>1562270467686</timestamp>
+  <startTime>1562270467694</startTime>
+  <result>FAILURE</result>
+  <duration>297</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>node {
+    stage (‘vlad’) {
+        curfew.check(this.&amp;timeout, this.&amp;input)
+    }
+}</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>100878947</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>159450082</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>154413904</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>107943367</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>9680616</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>7</iota>
+    <head>1:7</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

@@ -1,0 +1,5 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.customviewtabs.CustomViewsTabBar_-CustomViewsTabBarDescriptor plugin="jenkins-curfew-plugin@1.0-SNAPSHOT">
+  <labelText>jouda</labelText>
+  <tabColour>ffff00</tabColour>
+</org.jenkinsci.plugins.customviewtabs.CustomViewsTabBar_-CustomViewsTabBarDescriptor>

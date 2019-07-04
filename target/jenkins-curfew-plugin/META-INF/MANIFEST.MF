@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Built-By: joudahidri
+Created-By: Apache Maven
+Build-Jdk: 10.0.1
+Extension-Name: jenkins-curfew-plugin
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: jenkins-curfew-plugin
+Implementation-Version: 1.0-SNAPSHOT
+Group-Id: io.jenkins.plugins
+Short-Name: jenkins-curfew-plugin
+Long-Name: Jenkins-Curfew-Plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 1.0-SNAPSHOT (private-06/29/2019 00:25-joudahidri)
+Hudson-Version: 2.164.1
+Jenkins-Version: 2.164.1
+Plugin-Developers: 
+
