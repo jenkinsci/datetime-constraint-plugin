@@ -1,0 +1,11 @@
+commit aa979a9b1e558b7445af4a8471ed5f7e76587482
+tree ce439a3d8c71b5b2e369a538850b644be09c4dca
+parent 39e061b7b212b15a7707a5c58257315133ef3aba
+author Jouda Hidri <hidrijouda@gmail.com> 2019-07-06 14:16:28 +0200
+committer Jouda Hidri <hidrijouda@gmail.com> 2019-07-06 14:16:28 +0200
+
+    remove println
+
+
+
+:100644 100644 a805d04b5a5e145502f3e233d357fb056cd9a266 a314032480908684ff9ffcc0723d10b07523635a M	Jenkinsfile

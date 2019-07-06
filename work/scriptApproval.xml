@@ -2,18 +2,11 @@
 <scriptApproval plugin="script-security@1.60">
   <approvedScriptHashes/>
   <approvedSignatures>
-    <string>method groovy.lang.GroovyObject invokeMethod java.lang.String java.lang.Object</string>
-    <string>method org.jenkinsci.plugins.curfew.Curfew check groovy.lang.Closure groovy.lang.Closure</string>
+    <string>method org.jenkinsci.plugins.curfew.Curfew withTimeout groovy.lang.Closure groovy.lang.Closure</string>
   </approvedSignatures>
   <aclApprovedSignatures/>
   <approvedClasspathEntries/>
   <pendingScripts/>
-  <pendingSignatures>
-    <pendingSignature>
-      <context/>
-      <signature>method org.jenkinsci.plugins.curfew.Curfew check java.lang.Object</signature>
-      <dangerous>false</dangerous>
-    </pendingSignature>
-  </pendingSignatures>
+  <pendingSignatures/>
   <pendingClasspathEntries/>
 </scriptApproval>

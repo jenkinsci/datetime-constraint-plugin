@@ -14,14 +14,14 @@ Fetching changes from the remote Git repository
  > git config remote.origin.url https://github.com/Jouda-Hidri/Transistics.git # timeout=10
 Fetching upstream changes from https://github.com/Jouda-Hidri/Transistics.git
  > git --version # timeout=10
- > git fetch --tags --progress https://github.com/Jouda-Hidri/Transistics.git +refs/heads/*:refs/remotes/origin/*
+ > git fetch --tags --force --progress https://github.com/Jouda-Hidri/Transistics.git +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
-Checking out Revision ba9c7db8d0a4899c730dc49022e8aef5c1c6e4c6 (refs/remotes/origin/master)
+Checking out Revision 44aee15a50080cc8cb4f8ce7c8169b3d4b63b522 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f ba9c7db8d0a4899c730dc49022e8aef5c1c6e4c6
-Commit message: "test"
- > git rev-list --no-walk ba9c7db8d0a4899c730dc49022e8aef5c1c6e4c6 # timeout=10
+ > git checkout -f 44aee15a50080cc8cb4f8ce7c8169b3d4b63b522
+Commit message: "Revert "test""
+ > git rev-list --no-walk 44aee15a50080cc8cb4f8ce7c8169b3d4b63b522 # timeout=10
 [8mha:////4GskkDHz6zTSEvr+ubQu1J34IiaeUm8AsMexLtcDU6qPAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9Dg2gqvAAAAA==[0m[Pipeline] }
 [8mha:////4IT5J4tI3qhZLms0D8COY4avN8Z3Tsu/8kcsRLBID8/VAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbWRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9J+wGOvAAAAA==[0m[Pipeline] // stage
 [8mha:////4ODXU+nPTmBEc/QbHLBwsizzg0siWr3PhZFZWZYSy7zUAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDEh2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INtuQqUcEAAAA=[0m[Pipeline] withEnv
@@ -87,34 +87,21 @@ Stage "Post deploy" skipped due to earlier failure(s)
 [8mha:////4DhENELKjlA5i+GdbNyaCv4hiab9eoFpIl8heKP1fVV+AAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKhQDSIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfL8VZLsPPRtAz70AAAA=[0m[Pipeline] }
 [8mha:////4K2+1cb3M0HNG0ihDcNWdhwwTB3MLW4uDjV0Mq2efzylAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRQqJBVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PutINt9AC6nRGy9AAAA[0m[Pipeline] // node
 [8mha:////4KHrVPrzjJy3vuMP3QJwOFET8L5oIWOrjIOCsA8OJd8tAAAAox+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6IkDC7GybVh8Qsq1Fpo3sP2IUx+kb/mP0gkcfJO95zlvN5Yp4gjR6daS52nVHvVh8HNT40cu2vgUbV8UTVT4mBVZceKG3tasGKxWJblWGlsLNWBkycn2OrWPEwRDLniLHF2B43cN3c8kem5LCbKF6aI3W1oEtOv8zeAqe8F+b4UZOUHaO3jXL0AAAA=[0m[Pipeline] End of Pipeline
-hudson.remoting.ProxyException: groovy.lang.MissingMethodException: No signature of method: org.jenkinsci.plugins.curfew.Curfew.check() is applicable for argument types: (WorkflowScript) values: [WorkflowScript@1a99a81c]
-Possible solutions: check(groovy.lang.Closure, groovy.lang.Closure), collect(), grep(), every(), sleep(long), each(groovy.lang.Closure)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:58)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:64)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:54)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
-	at org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:158)
-	at org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)
-	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:157)
-	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:142)
+hudson.remoting.ProxyException: groovy.lang.MissingMethodException: No signature of method: java.lang.Class.withTimeout() is applicable for argument types: (org.kohsuke.groovy.sandbox.impl.SandboxedMethodClosure, org.jenkinsci.plugins.workflow.cps.CpsClosure2) values: [org.kohsuke.groovy.sandbox.impl.SandboxedMethodClosure@54614862, ...]
+	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:153)
 	at org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:156)
 	at org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:160)
 	at com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)
-	at WorkflowScript.run(WorkflowScript:19)
+	at WorkflowScript.run(WorkflowScript:20)
 	at ___cps.transform___(Native Method)
 	at com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:57)
 	at com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:109)
 	at com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:82)
-	at jdk.internal.reflect.GeneratedMethodAccessor257.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor166.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)
-	at com.cloudbees.groovy.cps.impl.LocalVariableBlock$LocalVariable.get(LocalVariableBlock.java:39)
-	at com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)
-	at com.cloudbees.groovy.cps.impl.LocalVariableBlock.evalLValue(LocalVariableBlock.java:28)
-	at com.cloudbees.groovy.cps.LValueBlock$BlockImpl.eval(LValueBlock.java:55)
-	at com.cloudbees.groovy.cps.LValueBlock.eval(LValueBlock.java:16)
+	at com.cloudbees.groovy.cps.impl.ClosureBlock.eval(ClosureBlock.java:46)
 	at com.cloudbees.groovy.cps.Next.step(Next.java:83)
 	at com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)
 	at com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)

@@ -3,8 +3,10 @@ workflow-cps
 workflow-scm-step
 workflow-step-api
 workflow-support
+build-timeout
 scm-api
 script-security
 structs
+token-macro
 ace-editor
 jquery-detached

@@ -9,18 +9,54 @@ public class Curfew implements Serializable {
         this.script = script
     }
 	
+	def checkPoint () {
+		def date = new Date()
+		int dayOfTheWeek = date[Calendar.DAY_OF_WEEK]
+		def hour = date.format('HH', TimeZone.getTimeZone('Europe/Berlin'))
+
+		if (dayOfTheWeek == Calendar.FRIDAY || hour.toInteger() >= 10 ) {
+			return true
+		}
+		
+		return false
+	}
+	
+	def check (Closure body) {
+		if (checkPoint()) {
+			body()
+		}
+	}
+	
+	def withTimeout (Closure timeout, Closure body) {
+		if (checkPoint()) {
+			timeout (time: 15, unit: 'SECONDS') {
+				body ()
+			}
+		}
+	}
+	
+	def withTimeout () {
+		println "why are you getting in here? "
+	}
+	
+//	def withTimeout (Closure body) {
+//		if (checkPoint()) {
+//			app.timeout (time: 15, unit: 'SECONDS') {
+//				body ()
+//			}
+//		}
+//	}
+	
+	// todo check why check (this.&timeout, this.&input) doesnt work (why input from outside doesnt work)
 	// todo check why check(this) doest work
 	// todo check if possible to call check() without params
-	def check (Object o) {
-		check(o.&timeout, o.&input)
-	}
 	
 	def check (Closure timeout, Closure input) {
 		def date = new Date()
 		int dayOfTheWeek = date[Calendar.DAY_OF_WEEK]
 		def hour = date.format('HH', TimeZone.getTimeZone('Europe/Berlin'))
 
-		if (dayOfTheWeek == Calendar.FRIDAY || hour.toInteger() >= 16 ) {
+		if (dayOfTheWeek == Calendar.FRIDAY || hour.toInteger() >= 16 ) { // if checkPoint
 			timeout (time: 15, unit: 'SECONDS') {
 				input ('Validation is required')
 			}

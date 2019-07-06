@@ -5,40 +5,100 @@
       <string>60</string>
     </parentIds>
     <id>61</id>
-    <startId>15</startId>
+    <startId>3</startId>
   </node>
   <actions>
-    <wf.a.BodyInvocationAction plugin="workflow-api@2.35"/>
     <wf.a.TimingAction plugin="workflow-api@2.35">
-      <startTime>1562272312273</startTime>
+      <startTime>1562413941766</startTime>
     </wf.a.TimingAction>
     <wf.a.ErrorAction plugin="workflow-api@2.35">
-      <error class="org.jenkinsci.plugins.workflow.steps.FlowInterruptedException" plugin="workflow-step-api@2.20">
+      <error class="hudson.remoting.ProxyException">
+        <detailMessage>groovy.lang.MissingMethodException: No signature of method: java.lang.Class.withTimeout() is applicable for argument types: (org.kohsuke.groovy.sandbox.impl.SandboxedMethodClosure, org.jenkinsci.plugins.workflow.cps.CpsClosure2) values: [org.kohsuke.groovy.sandbox.impl.SandboxedMethodClosure@26aa7304, ...]</detailMessage>
         <stackTrace>
-          <trace>org.jenkinsci.plugins.workflow.cps.CpsBodyExecution.cancel(CpsBodyExecution.java:253)</trace>
-          <trace>org.jenkinsci.plugins.workflow.steps.TimeoutStepExecution.cancel(TimeoutStepExecution.java:190)</trace>
-          <trace>org.jenkinsci.plugins.workflow.steps.TimeoutStepExecution.access$100(TimeoutStepExecution.java:38)</trace>
-          <trace>org.jenkinsci.plugins.workflow.steps.TimeoutStepExecution$1.run(TimeoutStepExecution.java:134)</trace>
-          <trace>jenkins.security.ImpersonatingScheduledExecutorService$1.run(ImpersonatingScheduledExecutorService.java:58)</trace>
+          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:153)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:156)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:160)</trace>
+          <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)</trace>
+          <trace>WorkflowScript.run(WorkflowScript:20)</trace>
+          <trace>___cps.transform___(Native Method)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:57)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:109)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:82)</trace>
+          <trace>jdk.internal.reflect.GeneratedMethodAccessor166.invoke(Unknown Source)</trace>
+          <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.base/java.lang.reflect.Method.invoke(Method.java:564)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ClosureBlock.eval(ClosureBlock.java:46)</trace>
+          <trace>com.cloudbees.groovy.cps.Next.step(Next.java:83)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)</trace>
+          <trace>org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:129)</trace>
+          <trace>org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:268)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:163)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:18)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:51)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:186)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:370)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.access$200(CpsThreadGroup.java:93)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:282)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:270)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$2.call(CpsVmExecutorService.java:64)</trace>
+          <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+          <trace>hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:131)</trace>
+          <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+          <trace>jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:59)</trace>
           <trace>java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514)</trace>
           <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
-          <trace>java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)</trace>
           <trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135)</trace>
           <trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)</trace>
           <trace>java.base/java.lang.Thread.run(Thread.java:844)</trace>
         </stackTrace>
         <suppressedExceptions class="empty-list"/>
-        <result>
-          <name>ABORTED</name>
-          <ordinal>4</ordinal>
-          <color>ABORTED</color>
-          <completeBuild>false</completeBuild>
-        </result>
-        <causes class="java.util.Arrays$ArrayList">
-          <a class="jenkins.model.CauseOfInterruption-array">
-            <org.jenkinsci.plugins.workflow.steps.TimeoutStepExecution_-ExceededTimeout plugin="workflow-basic-steps@2.18"/>
-          </a>
-        </causes>
+      </error>
+    </wf.a.ErrorAction>
+    <wf.a.ErrorAction plugin="workflow-api@2.35">
+      <error class="hudson.remoting.ProxyException">
+        <detailMessage>groovy.lang.MissingMethodException: No signature of method: java.lang.Class.withTimeout() is applicable for argument types: (org.kohsuke.groovy.sandbox.impl.SandboxedMethodClosure, org.jenkinsci.plugins.workflow.cps.CpsClosure2) values: [org.kohsuke.groovy.sandbox.impl.SandboxedMethodClosure@26aa7304, ...]</detailMessage>
+        <stackTrace>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[2]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[3]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[4]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[5]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[6]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[7]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[8]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[9]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[10]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[11]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[12]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[13]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[14]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[15]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[16]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[17]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[18]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[19]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[20]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[21]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[22]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[23]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[24]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[25]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[26]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[27]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[28]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[29]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[30]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[31]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[32]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[33]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[34]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[35]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[36]"/>
+          <trace reference="../../../../wf.a.ErrorAction/error/stackTrace/trace[37]"/>
+        </stackTrace>
+        <suppressedExceptions class="empty-list"/>
       </error>
     </wf.a.ErrorAction>
   </actions>

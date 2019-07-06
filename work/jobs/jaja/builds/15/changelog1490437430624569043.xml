@@ -1,0 +1,11 @@
+commit 39e061b7b212b15a7707a5c58257315133ef3aba
+tree 37bf51794e9891f0504d7524485919436ab113b3
+parent b29b4a609a09245cbbce2ed71bf14cca07f5a9c8
+author Jouda Hidri <hidrijouda@gmail.com> 2019-07-06 14:05:03 +0200
+committer Jouda Hidri <hidrijouda@gmail.com> 2019-07-06 14:05:03 +0200
+
+    echo global var
+
+
+
+:100644 100644 4643c8b6933898657b68791c52ffb9185c20738b a805d04b5a5e145502f3e233d357fb056cd9a266 M	Jenkinsfile

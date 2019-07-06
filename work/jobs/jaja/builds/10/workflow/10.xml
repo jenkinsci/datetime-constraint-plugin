@@ -15,8 +15,8 @@
           <string>overrides</string>
           <list>
             <string>GIT_BRANCH=origin/master</string>
-            <string>GIT_COMMIT=ba9c7db8d0a4899c730dc49022e8aef5c1c6e4c6</string>
-            <string>GIT_PREVIOUS_COMMIT=090e30abd3b77111571bea81da9663269592fb2d</string>
+            <string>GIT_COMMIT=44aee15a50080cc8cb4f8ce7c8169b3d4b63b522</string>
+            <string>GIT_PREVIOUS_COMMIT=44aee15a50080cc8cb4f8ce7c8169b3d4b63b522</string>
             <string>GIT_URL=https://github.com/Jouda-Hidri/Transistics.git</string>
           </list>
         </entry>
@@ -24,7 +24,7 @@
       <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
     </cps.a.ArgumentsActionImpl>
     <wf.a.TimingAction plugin="workflow-api@2.35">
-      <startTime>1562272097488</startTime>
+      <startTime>1562411653703</startTime>
     </wf.a.TimingAction>
   </actions>
 </Tag>

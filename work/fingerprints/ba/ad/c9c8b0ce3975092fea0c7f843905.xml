@@ -1,21 +1,21 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <fingerprint>
-  <timestamp>2019-07-04 19:42:06.237 UTC</timestamp>
+  <timestamp>2019-07-05 21:25:05.33 UTC</timestamp>
   <original>
-    <name>DSL_Pipeline</name>
-    <number>1</number>
+    <name>jiji</name>
+    <number>18</number>
   </original>
   <md5sum>baadc9c8b0ce3975092fea0c7f843905</md5sum>
   <fileName>Docker image sha256:baadc9c8b0ce3975092fea0c7f84390519b935b246ff118bb886a30b5b4e094c</fileName>
   <usages/>
   <facets>
     <org.jenkinsci.plugins.docker.commons.fingerprint.DockerDescendantFingerprintFacet plugin="docker-commons@1.15">
-      <timestamp>1562269326231</timestamp>
+      <timestamp>1562361905032</timestamp>
       <imageId>sha256:baadc9c8b0ce3975092fea0c7f84390519b935b246ff118bb886a30b5b4e094c</imageId>
       <usages>
         <entry>
-          <string>DSL_Pipeline</string>
-          <ranges>1</ranges>
+          <string>jiji</string>
+          <ranges>18</ranges>
         </entry>
       </usages>
       <descendantImageIds class="sorted-set">

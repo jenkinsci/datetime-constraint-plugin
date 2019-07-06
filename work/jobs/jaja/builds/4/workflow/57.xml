@@ -9,29 +9,36 @@
   </node>
   <actions>
     <wf.a.TimingAction plugin="workflow-api@2.35">
-      <startTime>1562270741081</startTime>
+      <startTime>1562410138893</startTime>
     </wf.a.TimingAction>
     <wf.a.ErrorAction plugin="workflow-api@2.35">
-      <error class="org.jenkinsci.plugins.scriptsecurity.sandbox.RejectedAccessException" plugin="script-security@1.60">
-        <detailMessage>Scripts not permitted to use method org.jenkinsci.plugins.curfew.Curfew check groovy.lang.Closure groovy.lang.Closure</detailMessage>
+      <error class="java.lang.ClassNotFoundException">
+        <detailMessage>org.jenkinsci.plugins.curfew.Curfew</detailMessage>
         <stackTrace>
-          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.whitelists.StaticWhitelist.rejectMethod(StaticWhitelist.java:262)</trace>
-          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:161)</trace>
-          <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:156)</trace>
-          <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:160)</trace>
-          <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)</trace>
-          <trace>WorkflowScript.run(WorkflowScript:19)</trace>
+          <trace>java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:466)</trace>
+          <trace>java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:566)</trace>
+          <trace>groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:677)</trace>
+          <trace>groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:787)</trace>
+          <trace>groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:775)</trace>
+          <trace>org.jenkinsci.plugins.curfew.CurfewGlobalVariable.getValue(CurfewGlobalVariable.java:24)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsScript.getProperty(CpsScript.java:135)</trace>
+          <trace>org.codehaus.groovy.runtime.InvokerHelper.getProperty(InvokerHelper.java:174)</trace>
+          <trace>org.codehaus.groovy.runtime.ScriptBytecodeAdapter.getProperty(ScriptBytecodeAdapter.java:456)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker$6.call(Checker.java:291)</trace>
+          <trace>org.kohsuke.groovy.sandbox.GroovyInterceptor.onGetProperty(GroovyInterceptor.java:68)</trace>
+          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onGetProperty(SandboxInterceptor.java:354)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker$6.call(Checker.java:289)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedGetProperty(Checker.java:293)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedGetProperty(Checker.java:269)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedGetProperty(Checker.java:269)</trace>
+          <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.getProperty(SandboxInvoker.java:29)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.PropertyAccessBlock.rawGet(PropertyAccessBlock.java:20)</trace>
+          <trace>WorkflowScript.run(WorkflowScript:20)</trace>
           <trace>___cps.transform___(Native Method)</trace>
-          <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:57)</trace>
-          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:109)</trace>
-          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:82)</trace>
-          <trace>jdk.internal.reflect.GeneratedMethodAccessor257.invoke(Unknown Source)</trace>
-          <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
-          <trace>java.base/java.lang.reflect.Method.invoke(Method.java:564)</trace>
-          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
-          <trace>com.cloudbees.groovy.cps.impl.MethodPointerBlock$ContinuationImpl.done(MethodPointerBlock.java:68)</trace>
-          <trace>java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</trace>
-          <trace>java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:74)</trace>
+          <trace>com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:66)</trace>
+          <trace>jdk.internal.reflect.GeneratedMethodAccessor195.invoke(Unknown Source)</trace>
           <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
           <trace>java.base/java.lang.reflect.Method.invoke(Method.java:564)</trace>
           <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
@@ -61,8 +68,6 @@
           <trace>java.base/java.lang.Thread.run(Thread.java:844)</trace>
         </stackTrace>
         <suppressedExceptions class="empty-list"/>
-        <signature>method org.jenkinsci.plugins.curfew.Curfew check groovy.lang.Closure groovy.lang.Closure</signature>
-        <dangerous>false</dangerous>
       </error>
     </wf.a.ErrorAction>
   </actions>

@@ -1,6 +1,19 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <flow-build plugin="workflow-job@2.33">
   <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>Greeting</name>
+          <description>How should I greet the world?</description>
+          <value>Hello</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>Greeting</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
     <hudson.model.CauseAction>
       <causeBag class="linked-hash-map">
         <entry>
@@ -9,15 +22,12 @@
         </entry>
       </causeBag>
     </hudson.model.CauseAction>
-    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.13">
-      <libraries/>
-    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
   </actions>
-  <queueId>12</queueId>
-  <timestamp>1562270638500</timestamp>
-  <startTime>1562270638508</startTime>
+  <queueId>83</queueId>
+  <timestamp>1562409939923</timestamp>
+  <startTime>1562409939936</startTime>
   <result>FAILURE</result>
-  <duration>1453</duration>
+  <duration>80</duration>
   <charset>UTF-8</charset>
   <keepLog>false</keepLog>
   <completed>true</completed>

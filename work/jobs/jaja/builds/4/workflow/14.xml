@@ -17,15 +17,15 @@
             <string>registryCredential=dockerhub</string>
             <string>registry=joudahidri/transactions-statistics-image</string>
             <string>dockerImage=</string>
-            <string>HOUR=22</string>
-            <string>DAY=Thu</string>
+            <string>HOUR=12</string>
+            <string>DAY=Sat</string>
           </list>
         </entry>
       </arguments>
       <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
     </cps.a.ArgumentsActionImpl>
     <wf.a.TimingAction plugin="workflow-api@2.35">
-      <startTime>1562270739802</startTime>
+      <startTime>1562410137508</startTime>
     </wf.a.TimingAction>
   </actions>
 </Tag>

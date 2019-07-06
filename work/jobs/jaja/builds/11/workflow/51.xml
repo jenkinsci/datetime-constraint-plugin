@@ -9,39 +9,26 @@
   </node>
   <actions>
     <wf.a.TimingAction plugin="workflow-api@2.35">
-      <startTime>1562272127678</startTime>
+      <startTime>1562412208436</startTime>
     </wf.a.TimingAction>
     <wf.a.ErrorAction plugin="workflow-api@2.35">
       <error class="hudson.remoting.ProxyException">
-        <detailMessage>groovy.lang.MissingMethodException: No signature of method: org.jenkinsci.plugins.curfew.Curfew.check() is applicable for argument types: (WorkflowScript) values: [WorkflowScript@1a99a81c]
-Possible solutions: check(groovy.lang.Closure, groovy.lang.Closure), collect(), grep(), every(), sleep(long), each(groovy.lang.Closure)</detailMessage>
+        <detailMessage>groovy.lang.MissingMethodException: No signature of method: java.lang.Class.withTimeout() is applicable for argument types: (org.kohsuke.groovy.sandbox.impl.SandboxedMethodClosure, org.jenkinsci.plugins.workflow.cps.CpsClosure2) values: [org.kohsuke.groovy.sandbox.impl.SandboxedMethodClosure@54614862, ...]</detailMessage>
         <stackTrace>
-          <trace>org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:58)</trace>
-          <trace>org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:64)</trace>
-          <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:54)</trace>
-          <trace>org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)</trace>
-          <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)</trace>
-          <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:158)</trace>
-          <trace>org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)</trace>
-          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:157)</trace>
-          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:142)</trace>
+          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:153)</trace>
           <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:156)</trace>
           <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:160)</trace>
           <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)</trace>
-          <trace>WorkflowScript.run(WorkflowScript:19)</trace>
+          <trace>WorkflowScript.run(WorkflowScript:20)</trace>
           <trace>___cps.transform___(Native Method)</trace>
           <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:57)</trace>
           <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:109)</trace>
           <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:82)</trace>
-          <trace>jdk.internal.reflect.GeneratedMethodAccessor257.invoke(Unknown Source)</trace>
+          <trace>jdk.internal.reflect.GeneratedMethodAccessor166.invoke(Unknown Source)</trace>
           <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
           <trace>java.base/java.lang.reflect.Method.invoke(Method.java:564)</trace>
           <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
-          <trace>com.cloudbees.groovy.cps.impl.LocalVariableBlock$LocalVariable.get(LocalVariableBlock.java:39)</trace>
-          <trace>com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)</trace>
-          <trace>com.cloudbees.groovy.cps.impl.LocalVariableBlock.evalLValue(LocalVariableBlock.java:28)</trace>
-          <trace>com.cloudbees.groovy.cps.LValueBlock$BlockImpl.eval(LValueBlock.java:55)</trace>
-          <trace>com.cloudbees.groovy.cps.LValueBlock.eval(LValueBlock.java:16)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ClosureBlock.eval(ClosureBlock.java:46)</trace>
           <trace>com.cloudbees.groovy.cps.Next.step(Next.java:83)</trace>
           <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)</trace>
           <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)</trace>

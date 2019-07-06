@@ -1,31 +1,23 @@
 Started by user unknown or anonymous
-Obtained Jenkinsfile from git https://github.com/Jouda-Hidri/Transistics.git
-Running in Durability level: MAX_SURVIVABILITY
-org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
-WorkflowScript: 18: Method calls on objects not allowed outside "script" blocks. @ line 18, column 5.
-   				curfew.check(this.&timeout, this.&input)
-       ^
+hudson.plugins.git.GitException: Command "git init /Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/work/caches/git-89735a0d3cf5fbde33b4210a2cdf6c0e" returned status code 1:
+stdout: 
+stderr: xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 
-WorkflowScript: 18: Arguments to "error" must be explicitly named. @ line 18, column 5.
-   				curfew.check(this.&timeout, this.&input)
-       ^
-
-2 errors
-
-	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:310)
-	at org.codehaus.groovy.control.CompilationUnit.applyToPrimaryClassNodes(CompilationUnit.java:1085)
-	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:603)
-	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:581)
-	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:558)
-	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:298)
-	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:268)
-	at groovy.lang.GroovyShell.parseClass(GroovyShell.java:688)
-	at groovy.lang.GroovyShell.parse(GroovyShell.java:700)
-	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.doParse(CpsGroovyShell.java:133)
-	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.reparse(CpsGroovyShell.java:126)
-	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:561)
-	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:522)
-	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:320)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2042)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2010)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2006)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommand(CliGitAPIImpl.java:1638)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl$5.execute(CliGitAPIImpl.java:811)
+Caused: hudson.plugins.git.GitException: Could not init /Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/work/caches/git-89735a0d3cf5fbde33b4210a2cdf6c0e
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl$5.execute(CliGitAPIImpl.java:813)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.init(CliGitAPIImpl.java:286)
+	at hudson.plugins.git.GitAPI.init(GitAPI.java:217)
+	at jenkins.plugins.git.GitSCMFileSystem$BuilderImpl.build(GitSCMFileSystem.java:324)
+	at jenkins.scm.api.SCMFileSystem.of(SCMFileSystem.java:198)
+	at jenkins.scm.api.SCMFileSystem.of(SCMFileSystem.java:174)
+	at org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition.create(CpsScmFlowDefinition.java:108)
+	at org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition.create(CpsScmFlowDefinition.java:67)
+	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:293)
 	at hudson.model.ResourceController.execute(ResourceController.java:97)
 	at hudson.model.Executor.run(Executor.java:429)
 Finished: FAILURE

@@ -26,7 +26,7 @@
       <libraries/>
     </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
     <org.jenkinsci.plugins.pipeline.modeldefinition.actions.ExecutionModelAction plugin="pipeline-model-definition@1.3.9">
-      <stagesUUID>4aede4e4-0aaa-479e-8d04-92093512c549</stagesUUID>
+      <stagesUUID>f29e13ed-d4c1-4384-9729-783e6c6ccfef</stagesUUID>
       <stagesList>
         <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStages plugin="pipeline-model-api@1.3.9">
           <stages>
@@ -45,7 +45,11 @@
                               <key>scriptBlock</key>
                             </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
                             <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
-                              <value class="string">curfew.check(this)</value>
+                              <value class="string">if (curfew.checkPoint()) {
+						timeout (time: 15, unit: &apos;SECONDS&apos;) {
+							input (&apos;Validation is required&apos;)
+						}
+					}</value>
                             </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
                           </entry>
                         </arguments>
@@ -307,7 +311,7 @@
               </branches>
             </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
           </stages>
-          <uuid>4aede4e4-0aaa-479e-8d04-92093512c549</uuid>
+          <uuid>f29e13ed-d4c1-4384-9729-783e6c6ccfef</uuid>
         </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStages>
       </stagesList>
     </org.jenkinsci.plugins.pipeline.modeldefinition.actions.ExecutionModelAction>
@@ -317,7 +321,7 @@
           <string>refs/remotes/origin/master</string>
           <hudson.plugins.git.util.Build>
             <marked plugin="git-client@2.8.0">
-              <sha1>ba9c7db8d0a4899c730dc49022e8aef5c1c6e4c6</sha1>
+              <sha1>3219e8b553b4c624979be169ec14ae51c69d3c3b</sha1>
               <branches class="list">
                 <hudson.plugins.git.Branch>
                   <sha1 reference="../../../sha1"/>
@@ -353,11 +357,11 @@
       </revisionStates>
     </org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState>
   </actions>
-  <queueId>23</queueId>
-  <timestamp>1562272194737</timestamp>
-  <startTime>1562272194747</startTime>
+  <queueId>5</queueId>
+  <timestamp>1562413833105</timestamp>
+  <startTime>1562413833112</startTime>
   <result>FAILURE</result>
-  <duration>14859</duration>
+  <duration>4374</duration>
   <charset>UTF-8</charset>
   <keepLog>false</keepLog>
   <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
@@ -380,9 +384,18 @@
 		stage(&apos;curfew&apos;) {
 			steps {
 			    script {
-					curfew.check(this)
+					// curfew.check(this.&amp;timeout, this.&amp;input)
+					/*
+					curfew.withTimeout(this.&amp;timeout)  {
+						input (&apos;Validation is required&apos;)
+					}
+					*/
+					if (curfew.checkPoint()) {
+						timeout (time: 15, unit: &apos;SECONDS&apos;) {
+							input (&apos;Validation is required&apos;)
+						}
+					}
 	            }
-				
 			}
 	    }    	
 		stage(&apos;validation&apos;) {
@@ -453,23 +466,23 @@
     <timings class="map">
       <entry>
         <string>flowNode</string>
-        <long>1011610146</long>
+        <long>694990931</long>
       </entry>
       <entry>
         <string>classLoad</string>
-        <long>10655896837</long>
+        <long>504642552</long>
       </entry>
       <entry>
         <string>run</string>
-        <long>8841570679</long>
+        <long>1596314591</long>
       </entry>
       <entry>
         <string>parse</string>
-        <long>2956909091</long>
+        <long>125533039</long>
       </entry>
       <entry>
         <string>saveProgram</string>
-        <long>1157932639</long>
+        <long>139868835</long>
       </entry>
     </timings>
     <sandbox>true</sandbox>
@@ -499,7 +512,7 @@
       </scm>
       <node></node>
       <workspace>/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/work/workspace/jaja</workspace>
-      <changelogFile>/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/work/jobs/jaja/builds/12/changelog7675131813678934589.xml</changelogFile>
+      <changelogFile>/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/work/jobs/jaja/builds/12/changelog1815203093401298216.xml</changelogFile>
       <pollingBaseline class="hudson.scm.SCMRevisionState$None" reference="../../../actions/org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState/revisionStates/entry/hudson.scm.SCMRevisionState_-None"/>
     </org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
   </checkouts>

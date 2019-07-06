@@ -13,7 +13,7 @@
       <displayName>curfew</displayName>
     </wf.a.LabelAction>
     <wf.a.TimingAction plugin="workflow-api@2.35">
-      <startTime>1562272098142</startTime>
+      <startTime>1562411654495</startTime>
     </wf.a.TimingAction>
     <wf.a.TagsAction plugin="workflow-api@2.35">
       <tags>

@@ -1,0 +1,24 @@
+commit 44aee15a50080cc8cb4f8ce7c8169b3d4b63b522
+tree 37f8ace00c0d32b72fd492625716a754c85b3b96
+parent 30be31ffc38e7c646149898f16f9b5f83a67bd3b
+author Jouda Hidri <hidrijouda@gmail.com> 2019-07-06 11:27:42 +0200
+committer Jouda Hidri <hidrijouda@gmail.com> 2019-07-06 11:27:42 +0200
+
+    Revert "test"
+
+    This reverts commit ef94e129392def487425737397df13c9572bfaf5.
+
+
+:100644 100644 35457fc14e833a19b97f5e64699d7817774adb40 4643c8b6933898657b68791c52ffb9185c20738b M	Jenkinsfile
+commit 30be31ffc38e7c646149898f16f9b5f83a67bd3b
+tree a729810fca99e4c2bb12f64ad59640f938bef90a
+parent adcb10c205ae9d5c02dcb03460373588cf2c3542
+author Jouda Hidri <hidrijouda@gmail.com> 2019-07-06 11:27:24 +0200
+committer Jouda Hidri <hidrijouda@gmail.com> 2019-07-06 11:27:24 +0200
+
+    Revert "test"
+
+    This reverts commit adcb10c205ae9d5c02dcb03460373588cf2c3542.
+
+
+:100644 100644 4643c8b6933898657b68791c52ffb9185c20738b 35457fc14e833a19b97f5e64699d7817774adb40 M	Jenkinsfile
