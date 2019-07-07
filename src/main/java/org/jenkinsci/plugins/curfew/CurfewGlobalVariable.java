@@ -28,7 +28,4 @@ public class CurfewGlobalVariable extends GlobalVariable{
 	    return curfew;
 	}
 	
-	public String getMyString() {
-	    return "Hello Jenkins!";
-	}
 }
