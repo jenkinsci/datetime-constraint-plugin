@@ -1,0 +1,4 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.curfew.CurfewConfig_-CurfewConfigDesc plugin="jenkins-curfew-plugin@1.0-SNAPSHOT">
+  <labelText>jouda-initial</labelText>
+</org.jenkinsci.plugins.curfew.CurfewConfig_-CurfewConfigDesc>

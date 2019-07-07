@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: nenashev
+Build-Jdk: 1.8.0_121
+Extension-Name: windows-slaves
+Specification-Title: Allows you to setup agents on Windows machines ov
+ er Windows Management Instrumentation (WMI)
+Implementation-Title: windows-slaves
+Implementation-Version: 1.4
+Group-Id: org.jenkins-ci.plugins
+Short-Name: windows-slaves
+Long-Name: WMI Windows Agents Plugin
+Url: https://wiki.jenkins.io/display/JENKINS/Windows+Slaves+Plugin
+Minimum-Java-Version: 1.7
+Plugin-Version: 1.4
+Hudson-Version: 1.625.3
+Jenkins-Version: 1.625.3
+Plugin-Developers: Oleg Nenashev:oleg_nenashev:o.v.nenashev@gmail.com
+

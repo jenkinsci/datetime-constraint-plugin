@@ -3,10 +3,10 @@ Group-Id: io.jenkins.plugins
 Short-Name: jenkins-curfew-plugin
 Long-Name: Jenkins Curfew Plugin
 Minimum-Java-Version: 1.8
-Plugin-Version: 1.0-SNAPSHOT (private-c533056d-joudahidri)
+Plugin-Version: 1.0-SNAPSHOT (private-c99314a8-joudahidri)
 Hudson-Version: 2.164.3
 Jenkins-Version: 2.164.3
-Plugin-Dependencies: workflow-cps:2.39,build-timeout:1.14
+Plugin-Dependencies: workflow-cps:2.39
 Plugin-Developers: 
 Libraries: /Users/joudahidri/Documents/jenkins-plugin-authion/tuto/emp
  ty-plugin/jenkins-curfew-plugin/src/main/resources,/Users/joudahidri/
