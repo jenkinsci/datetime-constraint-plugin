@@ -25,6 +25,7 @@ public class CurfewGlobalVariable extends GlobalVariable{
         	curfew = script.getClass().getClassLoader().loadClass("org.jenkinsci.plugins.curfew.Curfew").getConstructor(CpsScript.class).newInstance(script);
             binding.setVariable(getName(), curfew);
         }
+        
 	    return curfew;
 	}
 	

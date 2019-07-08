@@ -11,7 +11,7 @@ import net.sf.json.JSONObject;
 public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 	
 	@DataBoundConstructor
-	public CurfewConfig (String after) {
+	public CurfewConfig () {
 		super();
 	}
 
