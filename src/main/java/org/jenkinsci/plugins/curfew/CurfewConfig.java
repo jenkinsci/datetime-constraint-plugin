@@ -1,7 +1,5 @@
 package org.jenkinsci.plugins.curfew;
 
-import java.io.Serializable;
-
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
@@ -10,7 +8,7 @@ import hudson.model.Descriptor;
 import jenkins.model.GlobalConfiguration;
 import net.sf.json.JSONObject;
 
-public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration implements Serializable {
+public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 	
 	@DataBoundConstructor
 	public CurfewConfig () {
