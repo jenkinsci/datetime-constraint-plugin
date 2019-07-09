@@ -1,7 +1,6 @@
 package org.jenkinsci.plugins.curfew;
 
 import hudson.Extension;
-
 import org.jenkinsci.plugins.workflow.cps.CpsScript;
 import org.jenkinsci.plugins.workflow.cps.GlobalVariable;
 
@@ -22,10 +21,11 @@ public class CurfewGlobalVariable extends GlobalVariable{
         if (binding.hasVariable(getName())) {
         	curfew = binding.getVariable(getName());
         } else {
-        	curfew = script.getClass().getClassLoader().loadClass("org.jenkinsci.plugins.curfew.Curfew").getConstructor(CpsScript.class).newInstance(script);
-            binding.setVariable(getName(), curfew);
+        	curfew = script.getClass().getClassLoader().loadClass("org.jenkinsci.plugins.curfew.Curfew")
+        			.getConstructor(CpsScript.class, CurfewConfig.class).newInstance(script, new CurfewConfig()); // todo get config or new?
+        	binding.setVariable(getName(), curfew);
         }
-        
+
 	    return curfew;
 	}
 	

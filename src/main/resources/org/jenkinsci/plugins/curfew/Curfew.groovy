@@ -7,9 +7,11 @@ public class Curfew implements Serializable {
 	private int before = 10;
 	
     private org.jenkinsci.plugins.workflow.cps.CpsScript script
+	private CurfewConfig config
 	
-    public Curfew (org.jenkinsci.plugins.workflow.cps.CpsScript script) {
+    public Curfew (org.jenkinsci.plugins.workflow.cps.CpsScript script, CurfewConfig config) {
         this.script = script
+		this.config = config
     }
 	
 	public void setBefore(int before) {
