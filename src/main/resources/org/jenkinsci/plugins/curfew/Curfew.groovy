@@ -4,12 +4,13 @@ import java.io.Serializable;
 
 public class Curfew implements Serializable {
 	
-	private int before = 10;
+	private String before;
 	
     private org.jenkinsci.plugins.workflow.cps.CpsScript script
 	
-    public Curfew (org.jenkinsci.plugins.workflow.cps.CpsScript script) {
+    public Curfew (org.jenkinsci.plugins.workflow.cps.CpsScript script, String before) {
         this.script = script
+		this.before = before // todo replace with Hasmap?
     }
 	
 	public void setBefore(int before) {
@@ -21,7 +22,7 @@ public class Curfew implements Serializable {
 		int dayOfTheWeek = date[Calendar.DAY_OF_WEEK]
 		def hour = date.format('HH', TimeZone.getTimeZone('Europe/Berlin'))
 
-		if (dayOfTheWeek == Calendar.FRIDAY || hour.toInteger() >= before ) { //todo change later to after
+		if (dayOfTheWeek == Calendar.FRIDAY || hour.toInteger() >= before.toInteger() ) { //todo change later to after
 			return true
 		}
 		

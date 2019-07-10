@@ -1,5 +1,7 @@
 package org.jenkinsci.plugins.curfew;
 
+import javax.inject.Inject;
+
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
@@ -22,6 +24,9 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 	
 	@Extension
     public static final class CurfewConfigDesc extends Descriptor<GlobalConfiguration> {
+		
+		@Inject
+		private transient CurfewGlobalVariable curfewVar;
 		
 		private String mondayBefore = "6:00"; // todo other days of the week, time_zone, timeout
 		
@@ -46,6 +51,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		}
 
 		public void setMondayBefore(String mondayBefore) {
+			curfewVar.setBefore(mondayBefore);
 			this.mondayBefore = mondayBefore;
 		}
 
