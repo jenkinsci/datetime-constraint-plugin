@@ -10,8 +10,8 @@ import groovy.lang.Binding;
 @Extension
 public class CurfewGlobalVariable extends GlobalVariable{
 	
-	private String before = "8";
-	private String after = "16";
+	private String mondayBefore = "8";
+	private String mondayAfter = "16"; // todo make it here a hashmap
 
 	@Override
 	public String getName() {
@@ -26,19 +26,19 @@ public class CurfewGlobalVariable extends GlobalVariable{
         	curfew = binding.getVariable(getName());
         } else {
         	curfew = script.getClass().getClassLoader().loadClass("org.jenkinsci.plugins.curfew.Curfew")
-        			.getConstructor(CpsScript.class, String.class, String.class).newInstance(script, before, after);
+        			.getConstructor(CpsScript.class, String.class, String.class).newInstance(script, mondayBefore, mondayAfter);
             binding.setVariable(getName(), curfew);
         }
         
 	    return curfew;
 	}
 	
-	public void setBefore(String before) {
-		this.before = before;
+	public void setMondayBefore(String mondayBefore) {
+		this.mondayBefore = mondayBefore;
 	}
 
-	public void setAfter(String after) {
-		this.after = after;
+	public void setMondayAfter(String mondayAfter) {
+		this.mondayAfter = mondayAfter;
 	}
 	
 }

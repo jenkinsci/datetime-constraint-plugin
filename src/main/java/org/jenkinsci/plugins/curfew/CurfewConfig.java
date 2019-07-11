@@ -79,7 +79,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		}
 
 		public void setMondayBefore(String mondayBefore) {
-			curfewVar.setBefore(mondayBefore);
+			curfewVar.setMondayBefore(mondayBefore);
 			this.mondayBefore = mondayBefore;
 		}
 
@@ -88,7 +88,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		}
 
 		public void setMondayAfter(String mondayAfter) {
-			curfewVar.setAfter(mondayAfter);
+			curfewVar.setMondayAfter(mondayAfter);
 			this.mondayAfter = mondayAfter;
 		}
 

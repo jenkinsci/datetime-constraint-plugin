@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 public class Curfew implements Serializable {
 	
-	private String before;
-	private String after;
+	private String mondayBefore;
+	private String mondayAfter;
 	
     private org.jenkinsci.plugins.workflow.cps.CpsScript script
 	
-    public Curfew (org.jenkinsci.plugins.workflow.cps.CpsScript script, String before, String after) {
+    public Curfew (org.jenkinsci.plugins.workflow.cps.CpsScript script, String mondayBefore, String mondayAfter) {
         this.script = script
-		this.before = before
-		this.after = after
+		this.mondayBefore = mondayBefore
+		this.mondayAfter = mondayAfter
     }
 	
 	public void setBefore(int before) {
@@ -24,13 +24,17 @@ public class Curfew implements Serializable {
 		int dayOfTheWeek = date[Calendar.DAY_OF_WEEK]
 		def hour = date.format('HH', TimeZone.getTimeZone('Europe/Berlin'))
 
-		if (dayOfTheWeek == Calendar.FRIDAY 
-			|| hour.toInteger() >= after.toInteger()
-			|| hour.toInteger() <= before.toInteger() ) {
+		if (monday(dayOfTheWeek)) {
 			return true
 		}
 		
 		return false
+	}
+	
+	def monday(int dayOfTheWeek) {
+		return dayOfTheWeek == Calendar.MONDAY
+		and (hour.toInteger() >= mondayAfter.toInteger()
+			|| hour.toInteger() <= mondayBefore.toInteger() )
 	}
 	
 	def withTimeout (Closure timeout, Closure body) {
