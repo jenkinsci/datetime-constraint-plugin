@@ -2,6 +2,9 @@ package org.jenkinsci.plugins.curfew;
 
 import hudson.Extension;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.jenkinsci.plugins.workflow.cps.CpsScript;
 import org.jenkinsci.plugins.workflow.cps.GlobalVariable;
 
@@ -10,8 +13,7 @@ import groovy.lang.Binding;
 @Extension
 public class CurfewGlobalVariable extends GlobalVariable{
 	
-	private String mondayBefore = "8";
-	private String mondayAfter = "16"; // todo make it here a hashmap
+	private Map<String, String> times = new HashMap<String, String>(); 
 
 	@Override
 	public String getName() {
@@ -26,7 +28,7 @@ public class CurfewGlobalVariable extends GlobalVariable{
         	curfew = binding.getVariable(getName());
         } else {
         	curfew = script.getClass().getClassLoader().loadClass("org.jenkinsci.plugins.curfew.Curfew")
-        			.getConstructor(CpsScript.class, String.class, String.class).newInstance(script, mondayBefore, mondayAfter);
+        			.getConstructor(CpsScript.class, Map.class).newInstance(script, times);
             binding.setVariable(getName(), curfew);
         }
         
@@ -34,11 +36,11 @@ public class CurfewGlobalVariable extends GlobalVariable{
 	}
 	
 	public void setMondayBefore(String mondayBefore) {
-		this.mondayBefore = mondayBefore;
+		times.put("mondayBefore", mondayBefore); 
 	}
 
 	public void setMondayAfter(String mondayAfter) {
-		this.mondayAfter = mondayAfter;
+		times.put("mondayAfter", mondayAfter);
 	}
 	
 }
