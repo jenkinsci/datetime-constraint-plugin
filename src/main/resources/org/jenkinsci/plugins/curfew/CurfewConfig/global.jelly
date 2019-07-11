@@ -7,6 +7,10 @@
   <f:entry name="mondayBefore" field="mondayBefore" title="Monday before">
     <f:select />
   </f:entry>
+  
+    <f:entry name="mondayAfter" field="mondayAfter" title="Monday after">
+    <f:select />
+  </f:entry>
 
 </f:section> 
 </j:jelly>

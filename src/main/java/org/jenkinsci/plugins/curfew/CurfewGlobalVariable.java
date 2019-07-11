@@ -10,11 +10,8 @@ import groovy.lang.Binding;
 @Extension
 public class CurfewGlobalVariable extends GlobalVariable{
 	
-	private String before = "16";
-	
-	public void setBefore(String before) {
-		this.before = before;
-	}
+	private String before = "8";
+	private String after = "16";
 
 	@Override
 	public String getName() {
@@ -29,11 +26,19 @@ public class CurfewGlobalVariable extends GlobalVariable{
         	curfew = binding.getVariable(getName());
         } else {
         	curfew = script.getClass().getClassLoader().loadClass("org.jenkinsci.plugins.curfew.Curfew")
-        			.getConstructor(CpsScript.class, String.class).newInstance(script, before);
+        			.getConstructor(CpsScript.class, String.class, String.class).newInstance(script, before, after);
             binding.setVariable(getName(), curfew);
         }
         
 	    return curfew;
+	}
+	
+	public void setBefore(String before) {
+		this.before = before;
+	}
+
+	public void setAfter(String after) {
+		this.after = after;
 	}
 	
 }

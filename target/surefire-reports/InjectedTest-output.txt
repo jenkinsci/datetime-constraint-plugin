@@ -1,61 +1,61 @@
 Running tests for io.jenkins.plugins:jenkins-curfew-plugin:1.0-SNAPSHOT
-Jul 07, 2019 12:53:05 PM org.eclipse.jetty.util.log.Log initialized
-INFO: Logging initialized @525ms to org.eclipse.jetty.util.log.Slf4jLog
-Jul 07, 2019 12:53:06 PM org.jvnet.hudson.test.WarExploder explode
+Jul 11, 2019 9:01:16 PM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @438ms to org.eclipse.jetty.util.log.Slf4jLog
+Jul 11, 2019 9:01:17 PM org.jvnet.hudson.test.WarExploder explode
 INFO: Exploding /Users/joudahidri/.m2/repository/org/jenkins-ci/main/jenkins-war/2.164.3/jenkins-war-2.164.3.war into /Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.server.handler.ContextHandler setContextPath
+Jul 11, 2019 9:01:19 PM org.eclipse.jetty.server.handler.ContextHandler setContextPath
 WARNING: Empty contextPath
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.server.Server doStart
+Jul 11, 2019 9:01:20 PM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.4.5.v20170502
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Jul 11, 2019 9:01:20 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+Jul 11, 2019 9:01:20 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
 INFO: DefaultSessionIdManager workerName=node0
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+Jul 11, 2019 9:01:20 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
 INFO: No SessionScavenger set, using defaults
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.server.session.HouseKeeper startScavenging
+Jul 11, 2019 9:01:20 PM org.eclipse.jetty.server.session.HouseKeeper startScavenging
 INFO: Scavenging every 660000ms
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.server.handler.ContextHandler doStart
-INFO: Started o.e.j.w.WebAppContext@59496961{/,file:///Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test/,AVAILABLE}{/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test}
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@75e710b{HTTP/1.1,[http/1.1]}{localhost:51945}
-Jul 07, 2019 12:53:09 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @4325ms
-Jul 07, 2019 12:53:09 PM jenkins.InitReactorRunner$1 onAttained
+Jul 11, 2019 9:01:20 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@1dc2de84{/,file:///Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test/,AVAILABLE}{/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test}
+Jul 11, 2019 9:01:20 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@290aeb20{HTTP/1.1,[http/1.1]}{localhost:49722}
+Jul 11, 2019 9:01:20 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @4045ms
+Jul 11, 2019 9:01:20 PM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Jul 07, 2019 12:53:10 PM jenkins.InitReactorRunner$1 onAttained
+Jul 11, 2019 9:01:21 PM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Jul 07, 2019 12:53:12 PM jenkins.InitReactorRunner$1 onAttained
+Jul 11, 2019 9:01:22 PM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Jul 07, 2019 12:53:12 PM jenkins.InitReactorRunner$1 onAttained
+Jul 11, 2019 9:01:22 PM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Jul 07, 2019 12:53:12 PM jenkins.InitReactorRunner$1 onAttained
+Jul 11, 2019 9:01:22 PM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Jul 07, 2019 12:53:12 PM jenkins.InitReactorRunner$1 onAttained
+Jul 11, 2019 9:01:23 PM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Jul 07, 2019 12:53:13 PM jenkins.InitReactorRunner$1 onAttained
+Jul 11, 2019 9:01:23 PM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Jul 07, 2019 12:53:13 PM org.eclipse.jetty.server.Server doStart
+Jul 11, 2019 9:01:23 PM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.4.5.v20170502
-Jul 07, 2019 12:53:13 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+Jul 11, 2019 9:01:23 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
 INFO: DefaultSessionIdManager workerName=node0
-Jul 07, 2019 12:53:13 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+Jul 11, 2019 9:01:23 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
 INFO: No SessionScavenger set, using defaults
-Jul 07, 2019 12:53:13 PM org.eclipse.jetty.server.session.HouseKeeper startScavenging
-INFO: Scavenging every 660000ms
-Jul 07, 2019 12:53:13 PM org.eclipse.jetty.server.handler.ContextHandler doStart
-INFO: Started o.e.j.s.ServletContextHandler@14ef2482{/,null,AVAILABLE}
-Jul 07, 2019 12:53:13 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@5ec4ff02{HTTP/1.1,[http/1.1]}{0.0.0.0:51947}
-Jul 07, 2019 12:53:13 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @7749ms
-Jul 07, 2019 12:53:15 PM org.eclipse.jetty.server.AbstractConnector doStop
-INFO: Stopped ServerConnector@75e710b{HTTP/1.1,[http/1.1]}{localhost:0}
-Jul 07, 2019 12:53:15 PM org.eclipse.jetty.server.session.HouseKeeper stopScavenging
+Jul 11, 2019 9:01:23 PM org.eclipse.jetty.server.session.HouseKeeper startScavenging
+INFO: Scavenging every 600000ms
+Jul 11, 2019 9:01:23 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.s.ServletContextHandler@51a6cc2a{/,null,AVAILABLE}
+Jul 11, 2019 9:01:23 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@28cb3a25{HTTP/1.1,[http/1.1]}{0.0.0.0:49724}
+Jul 11, 2019 9:01:23 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @7234ms
+Jul 11, 2019 9:01:25 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@290aeb20{HTTP/1.1,[http/1.1]}{localhost:0}
+Jul 11, 2019 9:01:25 PM org.eclipse.jetty.server.session.HouseKeeper stopScavenging
 INFO: Stopped scavenging
-Jul 07, 2019 12:53:15 PM org.eclipse.jetty.server.handler.ContextHandler doStop
-INFO: Stopped o.e.j.w.WebAppContext@59496961{/,file:///Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test/,UNAVAILABLE}{/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test}
-Jul 07, 2019 12:53:15 PM jenkins.model.Jenkins cleanUp
+Jul 11, 2019 9:01:25 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@1dc2de84{/,file:///Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test/,UNAVAILABLE}{/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/target/jenkins-for-test}
+Jul 11, 2019 9:01:25 PM jenkins.model.Jenkins cleanUp
 INFO: Stopping Jenkins
-Jul 07, 2019 12:53:16 PM jenkins.model.Jenkins cleanUp
+Jul 11, 2019 9:01:26 PM jenkins.model.Jenkins cleanUp
 INFO: Jenkins stopped

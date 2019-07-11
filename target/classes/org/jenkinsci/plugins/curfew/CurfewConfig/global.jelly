@@ -4,8 +4,12 @@
 
 <f:section title="Curfew">
 
-  <f:entry field="mondayBefore" title="Monday before">
-    <f:textbox />
+  <f:entry name="mondayBefore" field="mondayBefore" title="Monday before">
+    <f:select />
+  </f:entry>
+  
+    <f:entry name="mondayAfter" field="mondayAfter" title="Monday after">
+    <f:select />
   </f:entry>
 
 </f:section> 

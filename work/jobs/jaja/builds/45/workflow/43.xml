@@ -1,0 +1,48 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.3">
+  <node class="cps.n.StepEndNode" plugin="workflow-cps@2.70">
+    <parentIds>
+      <string>42</string>
+    </parentIds>
+    <id>43</id>
+    <startId>42</startId>
+  </node>
+  <actions>
+    <wf.a.BodyInvocationAction plugin="workflow-api@2.35"/>
+    <wf.a.TimingAction plugin="workflow-api@2.35">
+      <startTime>1562697222065</startTime>
+    </wf.a.TimingAction>
+    <wf.a.ErrorAction plugin="workflow-api@2.35">
+      <error class="org.jenkinsci.plugins.workflow.steps.FlowInterruptedException" plugin="workflow-step-api@2.20">
+        <stackTrace>
+          <trace>org.jenkinsci.plugins.workflow.support.steps.input.InputStepExecution.doAbort(InputStepExecution.java:229)</trace>
+          <trace>org.jenkinsci.plugins.workflow.support.steps.input.InputStepExecution$1$1.run(InputStepExecution.java:101)</trace>
+          <trace>hudson.security.ACL.impersonate(ACL.java:273)</trace>
+          <trace>org.jenkinsci.plugins.workflow.support.steps.input.InputStepExecution$1.run(InputStepExecution.java:99)</trace>
+          <trace>jenkins.security.ImpersonatingScheduledExecutorService$1.run(ImpersonatingScheduledExecutorService.java:58)</trace>
+          <trace>java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)</trace>
+          <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+          <trace>java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)</trace>
+          <trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)</trace>
+          <trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)</trace>
+          <trace>java.base/java.lang.Thread.run(Thread.java:834)</trace>
+        </stackTrace>
+        <suppressedExceptions class="empty-list"/>
+        <result>
+          <name>ABORTED</name>
+          <ordinal>4</ordinal>
+          <color>ABORTED</color>
+          <completeBuild>false</completeBuild>
+        </result>
+        <causes class="java.util.Arrays$ArrayList">
+          <a class="jenkins.model.CauseOfInterruption-array">
+            <org.jenkinsci.plugins.workflow.support.steps.input.Rejection plugin="pipeline-input-step@2.10">
+              <userName>SYSTEM</userName>
+              <timestamp>1562697221417</timestamp>
+            </org.jenkinsci.plugins.workflow.support.steps.input.Rejection>
+          </a>
+        </causes>
+      </error>
+    </wf.a.ErrorAction>
+  </actions>
+</Tag>

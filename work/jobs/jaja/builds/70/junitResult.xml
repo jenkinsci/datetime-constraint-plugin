@@ -1,0 +1,374 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<result plugin="junit@1.28">
+  <suites>
+    <suite>
+      <file>/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/work/workspace/jaja/target/surefire-reports/TEST-transistics.ChallengeApplicationTests.xml</file>
+      <name>transistics.ChallengeApplicationTests</name>
+      <duration>0.001</duration>
+      <time>0.001</time>
+      <nodeId>36</nodeId>
+      <enclosingBlocks>
+        <string>34</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>Test</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.0</duration>
+          <className>transistics.ChallengeApplicationTests</className>
+          <testName>contextLoads</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/work/workspace/jaja/target/surefire-reports/TEST-transistics.controller.TransisticsControllerTest.xml</file>
+      <name>transistics.controller.TransisticsControllerTest</name>
+      <duration>5.376</duration>
+      <time>5.376</time>
+      <nodeId>36</nodeId>
+      <enclosingBlocks>
+        <string>34</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>Test</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.202</duration>
+          <className>transistics.controller.TransisticsControllerTest</className>
+          <testName>testAddTransactionsWhenTransactionIsOld</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.017</duration>
+          <className>transistics.controller.TransisticsControllerTest</className>
+          <testName>testAddTransactionsWhenTransactionIsRecent</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.022</duration>
+          <className>transistics.controller.TransisticsControllerTest</className>
+          <testName>testGetStatistics</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/joudahidri/Documents/jenkins-plugin-authion/tuto/empty-plugin/jenkins-curfew-plugin/work/workspace/jaja/target/surefire-reports/TEST-transistics.service.TransisticsServiceTest.xml</file>
+      <name>transistics.service.TransisticsServiceTest</name>
+      <duration>0.291</duration>
+      <time>0.291</time>
+      <nodeId>36</nodeId>
+      <enclosingBlocks>
+        <string>34</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>Test</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.002</duration>
+          <className>transistics.service.TransisticsServiceTest</className>
+          <testName>testRemoveAmount</testName>
+          <skipped>false</skipped>
+          <errorStackTrace>org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class transistics.domain.TransisticsStore.
+
+Mockito can only mock non-private &amp; non-final classes.
+If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 11.0.2+9
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.2+9
+JVM info           : mixed mode
+OS name            : Mac OS X
+OS version         : 10.14
+
+
+Underlying exception : java.lang.UnsupportedOperationException: Cannot define class using reflection
+Caused by: java.lang.UnsupportedOperationException: Cannot define class using reflection
+Caused by: java.lang.IllegalStateException: Could not find sun.misc.Unsafe
+Caused by: java.lang.NoSuchMethodException: sun.misc.Unsafe.defineClass(java.lang.String, [B, int, int, java.lang.ClassLoader, java.security.ProtectionDomain)
+</errorStackTrace>
+          <errorDetails>
+Mockito cannot mock this class: class transistics.domain.TransisticsStore.
+
+Mockito can only mock non-private &amp; non-final classes.
+If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 11.0.2+9
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.2+9
+JVM info           : mixed mode
+OS name            : Mac OS X
+OS version         : 10.14
+
+
+Underlying exception : java.lang.UnsupportedOperationException: Cannot define class using reflection</errorDetails>
+          <stdout>2019-07-10 21:09:47.344  INFO 31074 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [transistics.service.TransisticsServiceTest], using SpringBootContextLoader
+2019-07-10 21:09:47.344  INFO 31074 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [transistics.service.TransisticsServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-07-10 21:09:47.344  INFO 31074 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [transistics.service.TransisticsServiceTest]: TransisticsServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-07-10 21:09:47.351  INFO 31074 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration transistics.TransisticsApplication for test class transistics.service.TransisticsServiceTest
+2019-07-10 21:09:47.352  INFO 31074 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:09:47.353  INFO 31074 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@c9b5a99, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@70be89ec, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2aee0704, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@19a5b637, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4f3c7808, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4b4969ea, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@11c581a0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@256589a1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@935493d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@9b367c8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@34c62fdf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3de79067]
+2019-07-10 21:09:47.619 ERROR 31074 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2aee0704] to prepare test instance [transistics.service.TransisticsServiceTest@26994c6a]
+
+org.mockito.exceptions.base.MockitoException: 
+Mockito cannot mock this class: class transistics.domain.TransisticsStore.
+
+Mockito can only mock non-private &amp; non-final classes.
+If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 11.0.2+9
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.2+9
+JVM info           : mixed mode
+OS name            : Mac OS X
+OS version         : 10.14
+
+
+Underlying exception : java.lang.UnsupportedOperationException: Cannot define class using reflection
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.initMocks(MockitoTestExecutionListener.java:68) ~[spring-boot-test-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:53) ~[spring-boot-test-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) ~[surefire-junit4-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) ~[surefire-junit4-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) ~[surefire-junit4-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) ~[surefire-junit4-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379) ~[surefire-booter-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340) ~[surefire-booter-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125) ~[surefire-booter-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413) ~[surefire-booter-2.21.0.jar:2.21.0]
+Caused by: java.lang.UnsupportedOperationException: Cannot define class using reflection
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection$Dispatcher$Unavailable.defineClass(ClassInjector.java:821) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection.inject(ClassInjector.java:185) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassLoadingStrategy$Default$InjectionDispatcher.load(ClassLoadingStrategy.java:187) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.TypeResolutionStrategy$Passive.initialize(TypeResolutionStrategy.java:79) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.DynamicType$Default$Unloaded.load(DynamicType.java:4457) ~[byte-buddy-1.7.11.jar:na]
+	at org.mockito.internal.creation.bytebuddy.SubclassBytecodeGenerator.mockClass(SubclassBytecodeGenerator.java:121) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator$1.call(TypeCachingBytecodeGenerator.java:37) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator$1.call(TypeCachingBytecodeGenerator.java:34) ~[mockito-core-2.15.0.jar:na]
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:138) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:346) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:161) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:355) ~[byte-buddy-1.7.11.jar:na]
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.mockClass(TypeCachingBytecodeGenerator.java:32) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMockType(SubclassByteBuddyMockMaker.java:71) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:42) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock(ByteBuddyMockMaker.java:25) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:35) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:65) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.Mockito.mock(Mockito.java:1855) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:36) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:16) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:38) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:62) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:57) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:41) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.MockitoAnnotations.initMocks(MockitoAnnotations.java:69) ~[mockito-core-2.15.0.jar:na]
+	... 26 common frames omitted
+Caused by: java.lang.IllegalStateException: Could not find sun.misc.Unsafe
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe$Dispatcher$Disabled.initialize(ClassInjector.java:1366) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe.inject(ClassInjector.java:1202) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassLoadingStrategy$ForUnsafeInjection.load(ClassLoadingStrategy.java:458) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.TypeResolutionStrategy$Passive.initialize(TypeResolutionStrategy.java:79) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.DynamicType$Default$Unloaded.load(DynamicType.java:4457) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection$Dispatcher$Indirect.make(ClassInjector.java:684) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection$Dispatcher$CreationAction.run(ClassInjector.java:302) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection$Dispatcher$CreationAction.run(ClassInjector.java:290) ~[byte-buddy-1.7.11.jar:na]
+	at java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection.&lt;clinit&gt;(ClassInjector.java:70) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassLoadingStrategy$Default$InjectionDispatcher.load(ClassLoadingStrategy.java:184) ~[byte-buddy-1.7.11.jar:na]
+	... 49 common frames omitted
+Caused by: java.lang.NoSuchMethodException: sun.misc.Unsafe.defineClass(java.lang.String, [B, int, int, java.lang.ClassLoader, java.security.ProtectionDomain)
+	at java.base/java.lang.Class.getMethod(Class.java:2109) ~[na:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe$Dispatcher$CreationAction.run(ClassInjector.java:1269) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe$Dispatcher$CreationAction.run(ClassInjector.java:1257) ~[byte-buddy-1.7.11.jar:na]
+	at java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe.&lt;clinit&gt;(ClassInjector.java:1136) ~[byte-buddy-1.7.11.jar:na]
+	... 58 common frames omitted
+
+</stdout>
+          <failedSince>37</failedSince>
+        </case>
+        <case>
+          <duration>0.001</duration>
+          <className>transistics.service.TransisticsServiceTest</className>
+          <testName>testAddAmount</testName>
+          <skipped>false</skipped>
+          <errorStackTrace>org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class transistics.domain.TransisticsStore.
+
+Mockito can only mock non-private &amp; non-final classes.
+If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 11.0.2+9
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.2+9
+JVM info           : mixed mode
+OS name            : Mac OS X
+OS version         : 10.14
+
+
+Underlying exception : java.lang.UnsupportedOperationException: Cannot define class using reflection
+Caused by: java.lang.UnsupportedOperationException: Cannot define class using reflection
+Caused by: java.lang.IllegalStateException: Could not find sun.misc.Unsafe
+Caused by: java.lang.NoSuchMethodException: sun.misc.Unsafe.defineClass(java.lang.String, [B, int, int, java.lang.ClassLoader, java.security.ProtectionDomain)
+</errorStackTrace>
+          <errorDetails>
+Mockito cannot mock this class: class transistics.domain.TransisticsStore.
+
+Mockito can only mock non-private &amp; non-final classes.
+If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 11.0.2+9
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.2+9
+JVM info           : mixed mode
+OS name            : Mac OS X
+OS version         : 10.14
+
+
+Underlying exception : java.lang.UnsupportedOperationException: Cannot define class using reflection</errorDetails>
+          <stdout>2019-07-10 21:09:47.652 ERROR 31074 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2aee0704] to prepare test instance [transistics.service.TransisticsServiceTest@7d64a960]
+
+org.mockito.exceptions.base.MockitoException: 
+Mockito cannot mock this class: class transistics.domain.TransisticsStore.
+
+Mockito can only mock non-private &amp; non-final classes.
+If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 11.0.2+9
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.2+9
+JVM info           : mixed mode
+OS name            : Mac OS X
+OS version         : 10.14
+
+
+Underlying exception : java.lang.UnsupportedOperationException: Cannot define class using reflection
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.initMocks(MockitoTestExecutionListener.java:68) ~[spring-boot-test-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:53) ~[spring-boot-test-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) ~[junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) ~[junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) ~[spring-test-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) ~[surefire-junit4-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) ~[surefire-junit4-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) ~[surefire-junit4-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) ~[surefire-junit4-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379) ~[surefire-booter-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340) ~[surefire-booter-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125) ~[surefire-booter-2.21.0.jar:2.21.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413) ~[surefire-booter-2.21.0.jar:2.21.0]
+Caused by: java.lang.UnsupportedOperationException: Cannot define class using reflection
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection$Dispatcher$Unavailable.defineClass(ClassInjector.java:821) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection.inject(ClassInjector.java:185) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassLoadingStrategy$Default$InjectionDispatcher.load(ClassLoadingStrategy.java:187) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.TypeResolutionStrategy$Passive.initialize(TypeResolutionStrategy.java:79) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.DynamicType$Default$Unloaded.load(DynamicType.java:4457) ~[byte-buddy-1.7.11.jar:na]
+	at org.mockito.internal.creation.bytebuddy.SubclassBytecodeGenerator.mockClass(SubclassBytecodeGenerator.java:121) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator$1.call(TypeCachingBytecodeGenerator.java:37) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator$1.call(TypeCachingBytecodeGenerator.java:34) ~[mockito-core-2.15.0.jar:na]
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:138) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:346) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:161) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:355) ~[byte-buddy-1.7.11.jar:na]
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.mockClass(TypeCachingBytecodeGenerator.java:32) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMockType(SubclassByteBuddyMockMaker.java:71) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:42) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock(ByteBuddyMockMaker.java:25) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:35) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:65) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.Mockito.mock(Mockito.java:1855) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:36) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:16) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:38) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:62) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:57) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:41) ~[mockito-core-2.15.0.jar:na]
+	at org.mockito.MockitoAnnotations.initMocks(MockitoAnnotations.java:69) ~[mockito-core-2.15.0.jar:na]
+	... 26 common frames omitted
+Caused by: java.lang.IllegalStateException: Could not find sun.misc.Unsafe
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe$Dispatcher$Disabled.initialize(ClassInjector.java:1366) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe.inject(ClassInjector.java:1202) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassLoadingStrategy$ForUnsafeInjection.load(ClassLoadingStrategy.java:458) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.TypeResolutionStrategy$Passive.initialize(TypeResolutionStrategy.java:79) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.DynamicType$Default$Unloaded.load(DynamicType.java:4457) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection$Dispatcher$Indirect.make(ClassInjector.java:684) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection$Dispatcher$CreationAction.run(ClassInjector.java:302) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection$Dispatcher$CreationAction.run(ClassInjector.java:290) ~[byte-buddy-1.7.11.jar:na]
+	at java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingReflection.&lt;clinit&gt;(ClassInjector.java:70) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassLoadingStrategy$Default$InjectionDispatcher.load(ClassLoadingStrategy.java:184) ~[byte-buddy-1.7.11.jar:na]
+	... 49 common frames omitted
+Caused by: java.lang.NoSuchMethodException: sun.misc.Unsafe.defineClass(java.lang.String, [B, int, int, java.lang.ClassLoader, java.security.ProtectionDomain)
+	at java.base/java.lang.Class.getMethod(Class.java:2109) ~[na:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe$Dispatcher$CreationAction.run(ClassInjector.java:1269) ~[byte-buddy-1.7.11.jar:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe$Dispatcher$CreationAction.run(ClassInjector.java:1257) ~[byte-buddy-1.7.11.jar:na]
+	at java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]
+	at net.bytebuddy.dynamic.loading.ClassInjector$UsingUnsafe.&lt;clinit&gt;(ClassInjector.java:1136) ~[byte-buddy-1.7.11.jar:na]
+	... 58 common frames omitted
+
+</stdout>
+          <failedSince>37</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>5.6679997</duration>
+  <keepLongStdio>false</keepLongStdio>
+</result>
