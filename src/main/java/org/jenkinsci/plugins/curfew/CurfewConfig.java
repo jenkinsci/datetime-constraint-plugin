@@ -19,7 +19,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		super();
 	}
 
-	public String getMondayBefore(){    	
+	public String getMondayBefore(){    // todo rm because not called in Jelly	
 		CurfewConfigDesc descriptor = (CurfewConfigDesc) super.getDescriptor();    	
 		return descriptor.getMondayBefore();
 	}
@@ -30,8 +30,14 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		@Inject
 		private transient CurfewGlobalVariable curfewVar;
 		
-		private String mondayBefore = "8"; // todo other days of the week, time_zone, timeout
+		// todo other days of the week, time_zone, timeout
+		private String mondayBefore = "8"; 
 		private String mondayAfter = "16";
+		private String thursdayBefore = "8"; 
+		private String thursdayAfter = "16";
+		private String saturdayBefore = "8"; 
+		private String saturdayAfter = "16";
+		
 		
 		public CurfewConfigDesc() {
 			load();
@@ -46,6 +52,10 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
         	setMondayBefore(formData.getString("mondayBefore"));
         	setMondayAfter(formData.getString("mondayAfter"));
+        	setThursdayBefore(formData.getString("thursdayBefore"));
+        	setThursdayAfter(formData.getString("thursdayAfter"));
+        	setSaturdayBefore(formData.getString("saturdayBefore"));
+        	setSaturdayAfter(formData.getString("saturdayAfter"));
         	save();
             return false;
         }
@@ -66,7 +76,41 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			return list;
     	}
 
-		private Option option(int i, String field) { // todo later NONE & ALL DAY wont be displayed
+     	
+		public ListBoxModel doFillThursdayBeforeItems(){
+			ListBoxModel list = new ListBoxModel();
+			for (int i = 0; i<= 24; i++) {
+				list.add(option(i, thursdayBefore));
+			}
+			return list;
+		}
+		
+		public ListBoxModel doFillThursdayAfterItems(){
+			ListBoxModel list = new ListBoxModel();
+			for (int i = 0; i<= 24; i++) {
+				list.add(option(i, thursdayAfter));
+			}
+			return list;
+		}
+		
+     	
+		public ListBoxModel doFillSaturdayBeforeItems(){
+			ListBoxModel list = new ListBoxModel();
+			for (int i = 0; i<= 24; i++) {
+				list.add(option(i, saturdayBefore));
+			}
+			return list;
+		}
+		
+		public ListBoxModel doFillSaturdayAfterItems(){
+			ListBoxModel list = new ListBoxModel();
+			for (int i = 0; i<= 24; i++) {
+				list.add(option(i, saturdayAfter));
+			}
+			return list;
+		}
+    	
+		private Option option(int i, String field) {
 			String name = i+":00";
 			if (i<10) {
 				name = "0"+name;
@@ -79,7 +123,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		}
 
 		public void setMondayBefore(String mondayBefore) {
-			curfewVar.setMondayBefore(mondayBefore);
+			curfewVar.setTime("mondayBefore", mondayBefore);
 			this.mondayBefore = mondayBefore;
 		}
 
@@ -88,8 +132,44 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		}
 
 		public void setMondayAfter(String mondayAfter) {
-			curfewVar.setMondayAfter(mondayAfter);
+			curfewVar.setTime("mondayAfter", mondayAfter);
 			this.mondayAfter = mondayAfter;
+		}
+
+		public String getThursdayBefore() {
+			return thursdayBefore;
+		}
+
+		public void setThursdayBefore(String thursdayBefore) {
+			curfewVar.setTime("thursdayBefore", thursdayBefore);
+			this.thursdayBefore = thursdayBefore;
+		}
+		
+		public String getThursdayAfter() {
+			return thursdayAfter;
+		}
+
+		public void setThursdayAfter(String thursdayAfter) {
+			curfewVar.setTime("thursdayAfter", thursdayAfter);
+			this.thursdayAfter = thursdayAfter;
+		}
+		
+		public String getSaturdayBefore() {
+			return saturdayBefore;
+		}
+
+		public void setSaturdayBefore(String saturdayBefore) {
+			curfewVar.setTime("saturdayBefore", saturdayBefore);
+			this.saturdayBefore = saturdayBefore;
+		}
+		
+		public String getSaturdayAfter() {
+			return thursdayAfter;
+		}
+
+		public void setSaturdayAfter(String saturdayAfter) {
+			curfewVar.setTime("saturdayAfter", saturdayAfter);
+			this.saturdayAfter = saturdayAfter;
 		}
 
 	}

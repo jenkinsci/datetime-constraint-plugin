@@ -35,12 +35,8 @@ public class CurfewGlobalVariable extends GlobalVariable{
 	    return curfew;
 	}
 	
-	public void setMondayBefore(String mondayBefore) {
-		times.put("mondayBefore", mondayBefore); 
-	}
-
-	public void setMondayAfter(String mondayAfter) {
-		times.put("mondayAfter", mondayAfter);
+	public void setTime(String key, String value) {
+		times.put(key, value); 
 	}
 	
 }

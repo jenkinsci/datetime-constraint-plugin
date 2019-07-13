@@ -22,17 +22,53 @@ public class Curfew implements Serializable {
 		int dayOfTheWeek = date[Calendar.DAY_OF_WEEK]
 		def hour = date.format('HH', TimeZone.getTimeZone('Europe/Berlin'))
 
-		if (monday(dayOfTheWeek, hour)) {
+		if (saturday(dayOfTheWeek, hour)) {
 			return true
 		}
 		
 		return false
 	}
 	
+	/*
 	def monday(int dayOfTheWeek, def hour) {
 		return dayOfTheWeek == Calendar.MONDAY
 		and (hour.toInteger() >= times.get("mondayAfter").toInteger()
-			|| hour.toInteger() <= times.get("mondayBefore").toInteger() )
+			|| hour.toInteger() < times.get("mondayBefore").toInteger() )
+	}
+
+	def thursday(int dayOfTheWeek, def hour) {
+		boolean x1 = false;
+		boolean x2 = false;
+		if(times != null) {
+			String after = times.get("thursdayAfter")
+			if ( after != null )
+			{
+				x1 = hour.toInteger() >= after.toInteger()
+			}
+			String before = times.get("thursdayBefore")
+			if ( before != null ) {
+				x2 = hour.toInteger() < before.toInteger()
+			}
+		}
+	*/
+		
+	def saturday(int dayOfTheWeek, def hour) {
+		boolean x1 = false;
+		boolean x2 = false;
+		if(times != null) {
+			String after = times.get("saturdayAfter")
+			if ( after != null ) {
+				x1 = hour.toInteger() >= after.toInteger()
+			}
+			String before = times.get("saturdayBefore")
+			if ( before != null ) {
+				x2 = hour.toInteger() < before.toInteger()
+			}
+		}
+
+		boolean x = x1 || x2
+		boolean y = dayOfTheWeek == Calendar.SATURDAY
+		return ( y && x )
 	}
 	
 	def withTimeout (Closure timeout, Closure body) {

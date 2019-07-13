@@ -8,9 +8,25 @@
     <f:select />
   </f:entry>
   
-    <f:entry name="mondayAfter" field="mondayAfter" title="Monday after">
+  <f:entry name="mondayAfter" field="mondayAfter" title="Monday after">
     <f:select />
   </f:entry>
-
+  
+  <f:entry name="thursdayBefore" field="thursdayBefore" title="Thursday before">
+    <f:select />
+  </f:entry>
+  
+  <f:entry name="thursdayAfter" field="thursdayAfter" title="Thursday after">
+    <f:select />
+  </f:entry>
+  
+  <f:entry name="saturdayBefore" field="saturdayBefore" title="Saturday before">
+    <f:select />
+  </f:entry>
+  
+  <f:entry name="saturdayAfter" field="saturdayAfter" title="Saturday after">
+    <f:select />
+  </f:entry>
+  
 </f:section> 
 </j:jelly>
