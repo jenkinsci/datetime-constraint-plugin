@@ -13,62 +13,43 @@ public class Curfew implements Serializable {
 		this.times = times
     }
 	
-	public void setBefore(int before) {
-		this.before = before;
-	}
-	
 	def checkPoint () {
-		def date = new Date()
-		int dayOfTheWeek = date[Calendar.DAY_OF_WEEK]
-		def hour = date.format('HH', TimeZone.getTimeZone('Europe/Berlin'))
-
-		if (saturday(dayOfTheWeek, hour)) {
-			return true
+		
+		if(times != null) { // throw error instead - implement this in #GlobalVariable
+			
+			if (checkByDay(times.get("mondayBefore"), times.get("mondayAfter"), Calendar.MONDAY)
+				|| checkByDay(times.get("tuesdayBefore"), times.get("tuesdayAfter"), Calendar.TUESDAY)
+				|| checkByDay(times.get("wednesdayBefore"), times.get("wednesdayAfter"), Calendar.WEDNESDAY)
+				|| checkByDay(times.get("thursdayBefore"), times.get("thursdayAfter"), Calendar.THURSDAY)
+				|| checkByDay(times.get("fridayBefore"), times.get("fridayAfter"), Calendar.FRIDAY)
+				|| checkByDay(times.get("saturdayBefore"), times.get("saturdayAfter"), Calendar.SATURDAY)
+				|| checkByDay(times.get("sundayBefore"), times.get("sundayAfter"), Calendar.SUNDAY)) {
+				return true
+			}
+			
 		}
 		
 		return false
-	}
 	
-	/*
-	def monday(int dayOfTheWeek, def hour) {
-		return dayOfTheWeek == Calendar.MONDAY
-		and (hour.toInteger() >= times.get("mondayAfter").toInteger()
-			|| hour.toInteger() < times.get("mondayBefore").toInteger() )
 	}
-
-	def thursday(int dayOfTheWeek, def hour) {
-		boolean x1 = false;
-		boolean x2 = false;
-		if(times != null) {
-			String after = times.get("thursdayAfter")
-			if ( after != null )
-			{
-				x1 = hour.toInteger() >= after.toInteger()
-			}
-			String before = times.get("thursdayBefore")
-			if ( before != null ) {
-				x2 = hour.toInteger() < before.toInteger()
-			}
-		}
-	*/
 		
-	def saturday(int dayOfTheWeek, def hour) {
-		boolean x1 = false;
-		boolean x2 = false;
-		if(times != null) {
-			String after = times.get("saturdayAfter")
-			if ( after != null ) {
-				x1 = hour.toInteger() >= after.toInteger()
-			}
-			String before = times.get("saturdayBefore")
-			if ( before != null ) {
-				x2 = hour.toInteger() < before.toInteger()
-			}
+	def checkByDay(String minHour, String maxHour, int theDay) {
+		
+		if (minHour == null || maxHour == null) {  // throw error instead - implement this in #GlobalVariable
+			return false
 		}
-
-		boolean x = x1 || x2
-		boolean y = dayOfTheWeek == Calendar.SATURDAY
-		return ( y && x )
+		
+		def date = new Date()
+		int today = date[Calendar.DAY_OF_WEEK]
+		def hour = date.format('HH', TimeZone.getTimeZone('Europe/Berlin'))
+		
+		boolean tooEarly = hour.toInteger() < minHour.toInteger()
+		boolean tooLate = hour.toInteger() >= maxHour.toInteger()
+		
+		boolean tooEarlyOrTooLate = tooEarly || tooLate
+		boolean todayIsTheDay = today == theDay
+		
+		return ( todayIsTheDay && tooEarlyOrTooLate )
 	}
 	
 	def withTimeout (Closure timeout, Closure body) {
