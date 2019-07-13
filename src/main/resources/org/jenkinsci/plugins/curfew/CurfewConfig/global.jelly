@@ -11,6 +11,22 @@
   <f:entry name="mondayAfter" field="mondayAfter" title="Monday after">
     <f:select />
   </f:entry>
+
+  <f:entry name="tuesdayBefore" field="tuesdayBefore" title="Tuesday before">
+    <f:select />
+  </f:entry>
+  
+  <f:entry name="tuesdayAfter" field="tuesdayAfter" title="Tuesday after">
+    <f:select />
+  </f:entry>
+
+  <f:entry name="wednesdayBefore" field="wednesdayBefore" title="Wednesday before">
+    <f:select />
+  </f:entry>
+      
+  <f:entry name="wednesdayAfter" field="wednesdayAfter" title="Wednesday after">
+    <f:select />
+  </f:entry>
   
   <f:entry name="thursdayBefore" field="thursdayBefore" title="Thursday before">
     <f:select />
@@ -19,7 +35,15 @@
   <f:entry name="thursdayAfter" field="thursdayAfter" title="Thursday after">
     <f:select />
   </f:entry>
+
+  <f:entry name="fridayBefore" field="fridayBefore" title="Friday before">
+    <f:select />
+  </f:entry>
   
+  <f:entry name="fridayAfter" field="fridayAfter" title="Friday after">
+    <f:select />
+  </f:entry>
+    
   <f:entry name="saturdayBefore" field="saturdayBefore" title="Saturday before">
     <f:select />
   </f:entry>
@@ -28,5 +52,13 @@
     <f:select />
   </f:entry>
   
+  <f:entry name="sundayBefore" field="sundayBefore" title="Sunday before">
+    <f:select />
+  </f:entry>
+  
+  <f:entry name="sundayAfter" field="sundayAfter" title="Sunday after">
+    <f:select />
+  </f:entry>
+    
 </f:section> 
 </j:jelly>
