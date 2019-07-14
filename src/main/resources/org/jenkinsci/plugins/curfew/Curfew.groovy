@@ -1,6 +1,8 @@
 package org.jenkinsci.plugins.curfew;
 
 import java.io.Serializable;
+import org.jenkinsci.plugins.workflow.support.steps.input.InputStepExecution;
+import org.jenkinsci.plugins.workflow.support.steps.input.InputStep;
 
 public class Curfew implements Serializable {
 	
@@ -52,9 +54,9 @@ public class Curfew implements Serializable {
 		return ( todayIsTheDay && tooEarlyOrTooLate )
 	}
 	
-	def withTimeout (Closure timeout, Closure body) {
+	def withTimeout (Closure body) {
 		if (checkPoint()) {
-			timeout (time: 15, unit: 'SECONDS') {
+			script.timeout (time: 15, unit: 'SECONDS') {
 				body ()
 			}
 		}
