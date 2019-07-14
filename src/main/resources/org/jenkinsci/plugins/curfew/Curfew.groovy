@@ -54,7 +54,7 @@ public class Curfew implements Serializable {
 		return ( todayIsTheDay && tooEarlyOrTooLate )
 	}
 	
-	def withTimeout (Closure body) {
+	def call (Closure body) {
 		if (checkPoint()) {
 			script.timeout (time: 15, unit: 'SECONDS') {
 				body ()
