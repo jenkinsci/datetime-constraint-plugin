@@ -18,11 +18,6 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 	public CurfewConfig () {
 		super();
 	}
-
-	public String getMondayBefore(){    // todo rm because not called in Jelly	
-		CurfewConfigDesc descriptor = (CurfewConfigDesc) super.getDescriptor();    	
-		return descriptor.getMondayBefore();
-	}
 	
 	@Extension
     public static final class CurfewConfigDesc extends Descriptor<GlobalConfiguration> {
@@ -197,17 +192,9 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			return new Option(name, i+"", field.equals(i+""));
 		}
 
-		public String getMondayBefore() {
-			return mondayBefore;
-		}
-
 		public void setMondayBefore(String mondayBefore) {
 			curfewVar.setTime("mondayBefore", mondayBefore);
 			this.mondayBefore = mondayBefore;
-		}
-
-		public String getMondayAfter() {
-			return mondayAfter;
 		}
 
 		public void setMondayAfter(String mondayAfter) {
@@ -215,62 +202,34 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			this.mondayAfter = mondayAfter;
 		}
 
-		public String getTuesdayBefore() {
-			return tuesdayBefore;
-		}
-
 		public void setTuesdayBefore(String tuesdayBefore) {
 			curfewVar.setTime("tuesdayBefore", tuesdayBefore);
 			this.tuesdayBefore = tuesdayBefore;
 		}
 
-		public String getTuesdayAfter() {
-			return tuesdayAfter;
-		}
-
 		public void setTuesdayAfter(String tuesdayAfter) {
 			curfewVar.setTime("tuesdayAfter", tuesdayAfter);
 			this.tuesdayAfter = tuesdayAfter;
-		}		
-
-		public String getWednesdayBefore() {
-			return wednesdayBefore;
-		}
+		}	
 
 		public void setWednesdayBefore(String wednesdayBefore) {
 			curfewVar.setTime("wednesdayBefore", wednesdayBefore);
 			this.wednesdayBefore = wednesdayBefore;
 		}
 
-		public String getWednesdayAfter() {
-			return wednesdayAfter;
-		}
-
 		public void setWednesdayAfter(String wednesdayAfter) {
 			curfewVar.setTime("wednesdayAfter", wednesdayAfter);
 			this.wednesdayAfter = wednesdayAfter;
-		}		
-		
-		public String getThursdayBefore() {
-			return thursdayBefore;
-		}
+		}	
 
 		public void setThursdayBefore(String thursdayBefore) {
 			curfewVar.setTime("thursdayBefore", thursdayBefore);
 			this.thursdayBefore = thursdayBefore;
 		}
-		
-		public String getThursdayAfter() {
-			return thursdayAfter;
-		}
 
 		public void setThursdayAfter(String thursdayAfter) {
 			curfewVar.setTime("thursdayAfter", thursdayAfter);
 			this.thursdayAfter = thursdayAfter;
-		}
-		
-		public String getFridayBefore() {
-			return fridayBefore;
 		}
 
 		public void setFridayBefore(String fridayBefore) {
@@ -278,26 +237,14 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			this.fridayBefore = fridayBefore;
 		}
 
-		public String getFridayAfter() {
-			return fridayAfter;
-		}
-
 		public void setFridayAfter(String fridayAfter) {
 			curfewVar.setTime("fridayAfter", fridayAfter);
 			this.fridayAfter = fridayAfter;
-		}		
-		
-		public String getSaturdayBefore() {
-			return saturdayBefore;
-		}
+		}	
 
 		public void setSaturdayBefore(String saturdayBefore) {
 			curfewVar.setTime("saturdayBefore", saturdayBefore);
 			this.saturdayBefore = saturdayBefore;
-		}
-		
-		public String getSaturdayAfter() {
-			return thursdayAfter;
 		}
 
 		public void setSaturdayAfter(String saturdayAfter) {
@@ -305,17 +252,9 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			this.saturdayAfter = saturdayAfter;
 		}
 
-		public String getSundayAfter() {
-			return sundayAfter;
-		}
-
 		public void setSundayAfter(String sundayAfter) {
 			curfewVar.setTime("sundayAfter", sundayAfter);
 			this.sundayAfter = sundayAfter;
-		}
-
-		public String getSundayBefore() {
-			return sundayBefore;
 		}
 
 		public void setSundayBefore(String sundayBefore) {

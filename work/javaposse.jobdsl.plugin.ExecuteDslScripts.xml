@@ -1,4 +1,0 @@
-<?xml version='1.1' encoding='UTF-8'?>
-<javaposse.jobdsl.plugin.DescriptorImpl plugin="job-dsl@1.74">
-  <generatedJobMap class="concurrent-hash-map"/>
-</javaposse.jobdsl.plugin.DescriptorImpl>

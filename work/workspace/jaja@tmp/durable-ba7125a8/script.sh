@@ -1,1 +1,0 @@
-docker build -t joudahidri/transactions-statistics-image:22 .

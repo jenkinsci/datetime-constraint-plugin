@@ -1,6 +1,0 @@
-org/jenkinsci/plugins/curfew/CurfewConfig.stapler
-META-INF/annotations/hudson.Extension.txt
-org/jenkinsci/plugins/curfew/CurfewGlobalVariable.class
-org/jenkinsci/plugins/curfew/CurfewConfig$CurfewConfigDesc.class
-org/jenkinsci/plugins/curfew/CurfewConfig.class
-META-INF/annotations/hudson.Extension
