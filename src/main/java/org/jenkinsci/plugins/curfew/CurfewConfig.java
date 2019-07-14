@@ -1,5 +1,6 @@
 package org.jenkinsci.plugins.curfew;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -44,6 +45,24 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		
 		public CurfewConfigDesc() {
 			load();
+		}
+		
+		@PostConstruct
+	    public void init() {
+			curfewVar.setTime("mondayBefore", mondayBefore);
+			curfewVar.setTime("mondayAfter", mondayAfter);
+			curfewVar.setTime("tuesdayBefore", tuesdayBefore);
+			curfewVar.setTime("tuesdayAfter", tuesdayAfter);
+			curfewVar.setTime("wednesdayBefore", wednesdayBefore);
+			curfewVar.setTime("wednesdayAfter", wednesdayAfter);
+			curfewVar.setTime("thursdayBefore", thursdayBefore);
+			curfewVar.setTime("thursdayAfter", thursdayAfter);
+			curfewVar.setTime("fridayBefore", fridayBefore);
+			curfewVar.setTime("fridayAfter", fridayAfter);
+			curfewVar.setTime("saturdayBefore", saturdayBefore);
+			curfewVar.setTime("saturdayAfter", saturdayAfter);
+			curfewVar.setTime("sundayBefore", sundayBefore);
+			curfewVar.setTime("sundayAfter", sundayAfter);
 		}
 		
         @Override
