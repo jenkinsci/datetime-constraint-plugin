@@ -15,6 +15,14 @@ public class Curfew implements Serializable {
 		this.times = times
     }
 	
+	def call () {
+		if (checkPoint()) {
+			script.timeout (time: 15, unit: 'SECONDS') {
+				script.input ("Hey proceed plz")
+			}
+		}
+	}
+	
 	def checkPoint () {
 		
 		if(times != null) { // throw error instead - implement this in #GlobalVariable
@@ -52,14 +60,6 @@ public class Curfew implements Serializable {
 		boolean todayIsTheDay = today == theDay
 		
 		return ( todayIsTheDay && tooEarlyOrTooLate )
-	}
-	
-	def call (Closure body) {
-		if (checkPoint()) {
-			script.timeout (time: 15, unit: 'SECONDS') {
-				body ()
-			}
-		}
 	}
 	
 }
