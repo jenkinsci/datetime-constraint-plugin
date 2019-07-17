@@ -4,6 +4,10 @@
 
 <f:section title="Curfew">
 
+  <f:entry name="timeZone" field="timeZone" title="Time zone">
+    <f:select />
+  </f:entry>
+
   <f:entry name="mondayBefore" field="mondayBefore" title="Monday before">
     <f:select />
   </f:entry>

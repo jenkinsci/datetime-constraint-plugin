@@ -1,6 +1,7 @@
 package org.jenkinsci.plugins.curfew;
 
 import java.io.IOException;
+import java.time.ZoneId;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -29,7 +30,8 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		@Inject
 		private transient CurfewGlobalVariable curfewVar;
 		
-		// todo time_zone, timeout
+		// todo timeout
+		private String timeZone = "Europe/Berlin"; // todo set default value to UTC
 		private String mondayBefore = "8"; 
 		private String mondayAfter = "16";
 		private String tuesdayBefore = "8"; 
@@ -64,7 +66,8 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 				    e.printStackTrace();
 				  }
 				
-			
+
+			curfewVar.setTime("timeZone", curfewModel.getTimeZone() != null ? curfewModel.getTimeZone() : timeZone);
 			curfewVar.setTime("mondayBefore", curfewModel.getMondayBefore() != null ? curfewModel.getMondayBefore() : mondayBefore);
 			curfewVar.setTime("mondayAfter", curfewModel.getMondayAfter() != null ? curfewModel.getMondayAfter() : mondayAfter);
 			curfewVar.setTime("tuesdayBefore", curfewModel.getTuesdayBefore() != null ? curfewModel.getTuesdayBefore() : tuesdayBefore);
@@ -88,6 +91,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 
         @Override
         public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
+        	setTimeZone(formData.getString("timeZone"));
         	setMondayBefore(formData.getString("mondayBefore"));
         	setMondayAfter(formData.getString("mondayAfter"));
         	setTuesdayBefore(formData.getString("tuesdayBefore"));
@@ -104,6 +108,15 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         	setSundayAfter(formData.getString("sundayAfter"));
         	save();
             return false;
+        }
+        
+        public ListBoxModel doFillTimeZoneItems() {
+        	ListBoxModel list = new ListBoxModel();
+        	ZoneId.getAvailableZoneIds().stream()
+            	.forEach(z -> {
+            		list.add (new Option(z, z, timeZone.equals(z)));
+            	});
+        	return list;
         }
          	
     	public ListBoxModel doFillMondayBeforeItems(){
@@ -225,6 +238,11 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 				name = "0"+name;
 			}
 			return new Option(name, i+"", field.equals(i+""));
+		}
+		
+		public void setTimeZone(String timeZone) {
+			curfewVar.setTime("timeZone", timeZone);
+			this.timeZone = timeZone;
 		}
 
 		public void setMondayBefore(String mondayBefore) {

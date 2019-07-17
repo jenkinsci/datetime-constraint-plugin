@@ -50,8 +50,8 @@ public class Curfew implements Serializable {
 		}
 		
 		def date = new Date()
-		int today = date[Calendar.DAY_OF_WEEK]
-		def hour = date.format('HH', TimeZone.getTimeZone('Europe/Berlin'))
+		int today = date[Calendar.DAY_OF_WEEK] // todo with time zone
+		def hour = date.format('HH', TimeZone.getTimeZone(times.get("timeZone"))) // check null
 		
 		boolean tooEarly = hour.toInteger() < minHour.toInteger()
 		boolean tooLate = hour.toInteger() >= maxHour.toInteger()
