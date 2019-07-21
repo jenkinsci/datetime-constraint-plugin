@@ -2,6 +2,7 @@ package org.jenkinsci.plugins.curfew;
 
 import java.io.IOException;
 import java.time.ZoneId;
+import java.util.Comparator;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -115,9 +116,10 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         public ListBoxModel doFillTimeZoneItems() {
         	ListBoxModel list = new ListBoxModel();
         	ZoneId.getAvailableZoneIds().stream()
-            	.forEach(z -> {
-            		list.add (new Option(z, z, timeZone.equals(z))); // todo order alphebetically
-            	});
+        	.sorted()
+        	.forEach(z -> {
+        		list.add (new Option(z, z, timeZone.equals(z)));
+        		});
         	return list;
         }
          	
