@@ -5,7 +5,7 @@
 <f:section title="Curfew">
 
   <f:entry name="waitTime" field="waitTime" title="Wait time">
-    <f:textbox />
+    <f:number default="${it.getWaitTime}" />
   </f:entry>
   
   <f:entry name="timeZone" field="timeZone" title="Time zone">

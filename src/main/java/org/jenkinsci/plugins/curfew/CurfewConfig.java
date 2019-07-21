@@ -31,6 +31,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		private transient CurfewGlobalVariable curfewVar;
 		
 		private String waitTime = "30"; // in seconds
+
 		private String timeZone = "Europe/Berlin"; // todo set default value to UTC
 		private String mondayBefore = "8"; 
 		private String mondayAfter = "16";
@@ -239,6 +240,10 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 				name = "0"+name;
 			}
 			return new Option(name, i+"", field.equals(i+""));
+		}
+		
+		public String getWaitTime() {
+			return waitTime;
 		}
 		
 		public void setWaitTime(String waitTime) {
