@@ -4,6 +4,10 @@
 
 <f:section title="Curfew">
 
+  <f:entry name="waitTime" field="waitTime" title="Wait time">
+    <f:textbox />
+  </f:entry>
+  
   <f:entry name="timeZone" field="timeZone" title="Time zone">
     <f:select />
   </f:entry>

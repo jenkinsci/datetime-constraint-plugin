@@ -30,7 +30,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		@Inject
 		private transient CurfewGlobalVariable curfewVar;
 		
-		// todo timeout
+		private String waitTime = "30"; // in seconds
 		private String timeZone = "Europe/Berlin"; // todo set default value to UTC
 		private String mondayBefore = "8"; 
 		private String mondayAfter = "16";
@@ -66,7 +66,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 				    e.printStackTrace();
 				  }
 				
-
+			curfewVar.setTime("waitTime", curfewModel.getWaitTime() != null ? curfewModel.getWaitTime() : waitTime);
 			curfewVar.setTime("timeZone", curfewModel.getTimeZone() != null ? curfewModel.getTimeZone() : timeZone);
 			curfewVar.setTime("mondayBefore", curfewModel.getMondayBefore() != null ? curfewModel.getMondayBefore() : mondayBefore);
 			curfewVar.setTime("mondayAfter", curfewModel.getMondayAfter() != null ? curfewModel.getMondayAfter() : mondayAfter);
@@ -91,6 +91,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 
         @Override
         public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
+        	setWaitTime(formData.getString("waitTime"));
         	setTimeZone(formData.getString("timeZone"));
         	setMondayBefore(formData.getString("mondayBefore"));
         	setMondayAfter(formData.getString("mondayAfter"));
@@ -114,7 +115,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         	ListBoxModel list = new ListBoxModel();
         	ZoneId.getAvailableZoneIds().stream()
             	.forEach(z -> {
-            		list.add (new Option(z, z, timeZone.equals(z)));
+            		list.add (new Option(z, z, timeZone.equals(z))); // todo order alphebetically
             	});
         	return list;
         }
@@ -238,6 +239,11 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 				name = "0"+name;
 			}
 			return new Option(name, i+"", field.equals(i+""));
+		}
+		
+		public void setWaitTime(String waitTime) {
+			curfewVar.setTime("waitTime", waitTime);
+			this.waitTime = waitTime;
 		}
 		
 		public void setTimeZone(String timeZone) {

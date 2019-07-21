@@ -2,6 +2,8 @@ package org.jenkinsci.plugins.curfew;
 
 public class CurfewModel {
 	
+	private String waitTime; 
+	
 	private String timeZone; 
 	
 	private String mondayBefore; 
@@ -18,6 +20,13 @@ public class CurfewModel {
 	private String saturdayAfter;
 	private String sundayAfter;
 	private String sundayBefore;
+	
+	public String getWaitTime() {
+		return waitTime;
+	}
+	public void setWaitTime(String waitTime) {
+		this.waitTime = waitTime;
+	}
 	
 	public String getTimeZone() {
 		return timeZone;
@@ -110,5 +119,4 @@ public class CurfewModel {
 	public void setSundayBefore(String sundayBefore) {
 		this.sundayBefore = sundayBefore;
 	}
-
 }
