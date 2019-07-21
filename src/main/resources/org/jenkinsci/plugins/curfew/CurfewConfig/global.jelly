@@ -4,7 +4,7 @@
 
 <f:section title="Curfew">
 
-  <f:entry name="waitTime" field="waitTime" title="Wait time">
+  <f:entry name="waitTime" field="waitTime" title="Wait time (Min. 15 sec.)">
     <f:number default="${it.getWaitTime}" />
   </f:entry>
   

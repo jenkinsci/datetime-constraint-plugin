@@ -247,6 +247,15 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		}
 		
 		public void setWaitTime(String waitTime) {
+			try {
+				int t = Integer.parseInt(waitTime);
+				if (t < 15) {
+					t = 15;
+				}
+				waitTime = t+"";
+			} catch (NumberFormatException e) {
+				waitTime = "15";
+			}
 			curfewVar.setTime("waitTime", waitTime);
 			this.waitTime = waitTime;
 		}
