@@ -16,11 +16,11 @@
 	  <table>
 	    <f:optionalBlock name="monday" field="monday" title="Monday">
 		  
-		  <f:entry name="mondayBefore" field="mondayBefore" title="Monday before">
+		  <f:entry name="mondayBefore" field="mondayBefore" title="Before">
 		    <f:select />
 		  </f:entry>
 		  
-		  <f:entry name="mondayAfter" field="mondayAfter" title="Monday after">
+		  <f:entry name="mondayAfter" field="mondayAfter" title="After">
 		    <f:select />
 		  </f:entry>
 	    
@@ -29,55 +29,105 @@
   </f:block>
 
 
+  <f:block>
+	  <table>
+	    <f:optionalBlock name="tuesday" field="tuesday" title="Tuesday">
+		  
+		  <f:entry name="tuesdayBefore" field="tuesdayBefore" title="Before">
+		    <f:select />
+		  </f:entry>
+		  
+		  <f:entry name="tuesdayAfter" field="tuesdayAfter" title="After">
+		    <f:select />
+		  </f:entry>
+	    
+	    </f:optionalBlock>
+	  </table>
+  </f:block>
 
-  <f:entry name="tuesdayBefore" field="tuesdayBefore" title="Tuesday before">
-    <f:select />
-  </f:entry>
-  
-  <f:entry name="tuesdayAfter" field="tuesdayAfter" title="Tuesday after">
-    <f:select />
-  </f:entry>
 
-  <f:entry name="wednesdayBefore" field="wednesdayBefore" title="Wednesday before">
-    <f:select />
-  </f:entry>
-      
-  <f:entry name="wednesdayAfter" field="wednesdayAfter" title="Wednesday after">
-    <f:select />
-  </f:entry>
-  
-  <f:entry name="thursdayBefore" field="thursdayBefore" title="Thursday before">
-    <f:select />
-  </f:entry>
-  
-  <f:entry name="thursdayAfter" field="thursdayAfter" title="Thursday after">
-    <f:select />
-  </f:entry>
+  <f:block>
+	  <table>
+	    <f:optionalBlock name="wednesday" field="wednesday" title="Wednesday">
+		  
+		  <f:entry name="wednesdayBefore" field="wednesdayBefore" title="Before">
+		    <f:select />
+		  </f:entry>
+		      
+		  <f:entry name="wednesdayAfter" field="wednesdayAfter" title="After">
+		    <f:select />
+		  </f:entry>
+	    
+	    </f:optionalBlock>
+	  </table>
+  </f:block>
 
-  <f:entry name="fridayBefore" field="fridayBefore" title="Friday before">
-    <f:select />
-  </f:entry>
+
+  <f:block>
+	  <table>
+	    <f:optionalBlock name="thursday" field="thursday" title="Thursday">
+		  
+		  <f:entry name="thursdayBefore" field="thursdayBefore" title="Before">
+		    <f:select />
+		  </f:entry>
+		  
+		  <f:entry name="thursdayAfter" field="thursdayAfter" title="After">
+		    <f:select />
+		  </f:entry>
+	    
+	    </f:optionalBlock>
+	  </table>
+  </f:block>
   
-  <f:entry name="fridayAfter" field="fridayAfter" title="Friday after">
-    <f:select />
-  </f:entry>
-    
-  <f:entry name="saturdayBefore" field="saturdayBefore" title="Saturday before">
-    <f:select />
-  </f:entry>
+
+  <f:block>
+	  <table>
+	    <f:optionalBlock name="friday" field="friday" title="Friday">
+		  
+		  <f:entry name="fridayBefore" field="fridayBefore" title="Before">
+		    <f:select />
+		  </f:entry>
+		  
+		  <f:entry name="fridayAfter" field="fridayAfter" title="After">
+		    <f:select />
+		  </f:entry>
+	    
+	    </f:optionalBlock>
+	  </table>
+  </f:block>
+
+
+  <f:block>
+	  <table>
+	    <f:optionalBlock name="saturday" field="saturday" title="Saturday">
+		  
+		  <f:entry name="saturdayBefore" field="saturdayBefore" title="Before">
+		    <f:select />
+		  </f:entry>
+		  
+		  <f:entry name="saturdayAfter" field="saturdayAfter" title="After">
+		    <f:select />
+		  </f:entry>
+	    
+	    </f:optionalBlock>
+	  </table>
+  </f:block>
   
-  <f:entry name="saturdayAfter" field="saturdayAfter" title="Saturday after">
-    <f:select />
-  </f:entry>
-  
-  	  <f:entry name="sundayBefore" field="sundayBefore" title="Before">
-	    <f:select />
-	  </f:entry>
-	  
-	  <f:entry name="sundayAfter" field="sundayAfter" title="After">
-	    <f:select />
-	  </f:entry>
-  
+    <f:block>
+	  <table>
+	    <f:optionalBlock name="sunday" field="sunday" title="Sunday">
+		  
+	  	  <f:entry name="sundayBefore" field="sundayBefore" title="Before">
+		    <f:select />
+		  </f:entry>
+		  
+		  <f:entry name="sundayAfter" field="sundayAfter" title="After">
+		    <f:select />
+		  </f:entry>
+	    
+	    </f:optionalBlock>
+	  </table>
+  </f:block>
     
 </f:section> 
 </j:jelly>

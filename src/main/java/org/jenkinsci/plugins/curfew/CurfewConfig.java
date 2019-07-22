@@ -96,27 +96,54 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 
         @Override
         public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
+        	
         	setWaitTime(formData.getString("waitTime"));
         	setTimeZone(formData.getString("timeZone"));
-        	boolean selected = setDay(formData, "monday");
-        	if (! selected) {
+        	
+        	boolean mondayIsSelected = setDay(formData, "monday");
+        	if (!mondayIsSelected) {
         		setMondayBefore(null); // todo save checkbox
                 setMondayAfter(null);
         	}
 
-        	setTuesdayBefore(formData.getString("tuesdayBefore"));
-        	setTuesdayAfter(formData.getString("tuesdayAfter"));
-        	setWednesdayBefore(formData.getString("wednesdayBefore"));
-        	setWednesdayAfter(formData.getString("wednesdayAfter"));
-        	setThursdayBefore(formData.getString("thursdayBefore"));
-        	setThursdayAfter(formData.getString("thursdayAfter"));
-        	setFridayBefore(formData.getString("fridayBefore"));
-        	setFridayAfter(formData.getString("fridayAfter"));
-        	setSaturdayBefore(formData.getString("saturdayBefore"));
-        	setSaturdayAfter(formData.getString("saturdayAfter"));
-        	setSundayBefore(formData.getString("sundayBefore"));
-        	setSundayAfter(formData.getString("sundayAfter"));
+        	boolean tuesdayIsSelected = setDay(formData, "tuesday");
+        	if (!tuesdayIsSelected) {
+        		setTuesdayBefore(null); // todo save checkbox
+        		setTuesdayAfter(null);
+        	}
+        	
+        	boolean wednesdayIsSelected = setDay(formData, "wednesday");
+        	if (!wednesdayIsSelected) {
+        		setWednesdayBefore(null); // todo save checkbox
+        		setWednesdayAfter(null);
+        	}
+        	
+        	boolean thursdayIsSelected = setDay(formData, "thursday");
+        	if (!thursdayIsSelected) {
+        		setThursdayBefore(null); // todo save checkbox
+        		setThursdayAfter(null);
+        	}
+        	
+        	boolean fridayIsSelected = setDay(formData, "friday");
+        	if (!fridayIsSelected) {
+        		setFridayBefore(null); // todo save checkbox
+        		setFridayAfter(null);
+        	}
+        	
+        	boolean saturdayIsSelected = setDay(formData, "saturday");
+        	if (!saturdayIsSelected) {
+        		setSaturdayBefore(null); // todo save checkbox
+        		setSaturdayAfter(null);
+        	}
+        	
+        	boolean sundayIsSelected = setDay(formData, "sunday");
+        	if (!sundayIsSelected) {
+        		setSundayBefore(null); // todo save checkbox
+        		setSundayAfter(null);
+        	}
+        	
         	save();
+        	
             return false;
         }
 
