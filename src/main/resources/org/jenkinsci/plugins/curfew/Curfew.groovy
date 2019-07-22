@@ -46,7 +46,7 @@ public class Curfew implements Serializable {
 		
 	def checkByDay(String minHour, String maxHour, int theDay) {
 		
-		if (minHour == null || maxHour == null) {  // throw error instead - implement this in #GlobalVariable
+		if (minHour == null || maxHour == null) {
 			return false
 		}
 		

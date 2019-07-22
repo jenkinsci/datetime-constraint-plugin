@@ -34,6 +34,8 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		private String waitTime = "30"; // in seconds
 
 		private String timeZone = "UTC";
+		
+		// todo put default value to null?
 		private String mondayBefore = "8"; 
 		private String mondayAfter = "16";
 		private String tuesdayBefore = "8"; 
@@ -70,6 +72,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 				
 			curfewVar.setTime("waitTime", curfewModel.getWaitTime() != null ? curfewModel.getWaitTime() : waitTime);
 			curfewVar.setTime("timeZone", curfewModel.getTimeZone() != null ? curfewModel.getTimeZone() : timeZone);
+			// todo remove check if null
 			curfewVar.setTime("mondayBefore", curfewModel.getMondayBefore() != null ? curfewModel.getMondayBefore() : mondayBefore);
 			curfewVar.setTime("mondayAfter", curfewModel.getMondayAfter() != null ? curfewModel.getMondayAfter() : mondayAfter);
 			curfewVar.setTime("tuesdayBefore", curfewModel.getTuesdayBefore() != null ? curfewModel.getTuesdayBefore() : tuesdayBefore);
@@ -95,8 +98,12 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
         	setWaitTime(formData.getString("waitTime"));
         	setTimeZone(formData.getString("timeZone"));
-        	setMondayBefore(formData.getString("mondayBefore"));
-        	setMondayAfter(formData.getString("mondayAfter"));
+        	boolean selected = setDay(formData, "monday");
+        	if (! selected) {
+        		setMondayBefore(null); // todo save checkbox
+                setMondayAfter(null);
+        	}
+
         	setTuesdayBefore(formData.getString("tuesdayBefore"));
         	setTuesdayAfter(formData.getString("tuesdayAfter"));
         	setWednesdayBefore(formData.getString("wednesdayBefore"));
@@ -112,6 +119,23 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         	save();
             return false;
         }
+
+		private boolean setDay(JSONObject formData, String day) {
+			if ( formData.has(day) ) {
+        		/*
+        		 *  && formData.getJSONObject("monday") != null 
+        			&& formData.getJSONObject("monday").has("mondayBefore") 
+        			&& formData.getJSONObject("monday").has("mondayAfter")
+        		 * */
+        		JSONObject dayField = formData.getJSONObject(day);
+        		setMondayBefore(dayField.get(day+"Before").toString());
+                setMondayAfter(dayField.get(day+"After").toString());   
+                return true;
+        	} 
+			return false;
+		}
+        
+        // todo fill in also values of checkboxes (optional block)
         
         public ListBoxModel doFillTimeZoneItems() {
         	ListBoxModel list = new ListBoxModel();
@@ -241,7 +265,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			if (i<10) {
 				name = "0"+name;
 			}
-			return new Option(name, i+"", field.equals(i+""));
+			return new Option(name, i+"", (""+i).equals(field)); //todo how to do with defualt before & defualt after?
 		}
 		
 		public String getWaitTime() {

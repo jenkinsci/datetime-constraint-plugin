@@ -11,14 +11,24 @@
   <f:entry name="timeZone" field="timeZone" title="Time zone">
     <f:select />
   </f:entry>
-
-  <f:entry name="mondayBefore" field="mondayBefore" title="Monday before">
-    <f:select />
-  </f:entry>
   
-  <f:entry name="mondayAfter" field="mondayAfter" title="Monday after">
-    <f:select />
-  </f:entry>
+  <f:block>
+	  <table>
+	    <f:optionalBlock name="monday" field="monday" title="Monday">
+		  
+		  <f:entry name="mondayBefore" field="mondayBefore" title="Monday before">
+		    <f:select />
+		  </f:entry>
+		  
+		  <f:entry name="mondayAfter" field="mondayAfter" title="Monday after">
+		    <f:select />
+		  </f:entry>
+	    
+	    </f:optionalBlock>
+	  </table>
+  </f:block>
+
+
 
   <f:entry name="tuesdayBefore" field="tuesdayBefore" title="Tuesday before">
     <f:select />
@@ -60,13 +70,14 @@
     <f:select />
   </f:entry>
   
-  <f:entry name="sundayBefore" field="sundayBefore" title="Sunday before">
-    <f:select />
-  </f:entry>
+  	  <f:entry name="sundayBefore" field="sundayBefore" title="Before">
+	    <f:select />
+	  </f:entry>
+	  
+	  <f:entry name="sundayAfter" field="sundayAfter" title="After">
+	    <f:select />
+	  </f:entry>
   
-  <f:entry name="sundayAfter" field="sundayAfter" title="Sunday after">
-    <f:select />
-  </f:entry>
     
 </f:section> 
 </j:jelly>
