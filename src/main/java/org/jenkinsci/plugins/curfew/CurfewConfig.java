@@ -100,44 +100,107 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         	setWaitTime(formData.getString("waitTime"));
         	setTimeZone(formData.getString("timeZone"));
         	
-        	boolean mondayIsSelected = setDay(formData, "monday");
-        	if (!mondayIsSelected) {
+			if ( formData.has("monday") ) {
+        		/*
+        		 *  && formData.getJSONObject("monday") != null 
+        			&& formData.getJSONObject("monday").has("mondayBefore") 
+        			&& formData.getJSONObject("monday").has("mondayAfter")
+        		 * */
+        		JSONObject dayField = formData.getJSONObject("monday");
+        		setMondayBefore(dayField.get("mondayBefore").toString());
+                setMondayAfter(dayField.get("mondayAfter").toString());   
+               
+        	} else {
         		setMondayBefore(null); // todo save checkbox
                 setMondayAfter(null);
         	}
 
-        	boolean tuesdayIsSelected = setDay(formData, "tuesday");
-        	if (!tuesdayIsSelected) {
+			if ( formData.has("tuesday") ) {
+        		/*
+        		 *  && formData.getJSONObject("monday") != null 
+        			&& formData.getJSONObject("monday").has("mondayBefore") 
+        			&& formData.getJSONObject("monday").has("mondayAfter")
+        		 * */
+        		JSONObject dayField = formData.getJSONObject("tuesday");
+        		setTuesdayBefore(dayField.get("tuesdayBefore").toString());
+        		setTuesdayAfter(dayField.get("tuesdayAfter").toString());   
+               
+        	} else {
         		setTuesdayBefore(null); // todo save checkbox
         		setTuesdayAfter(null);
         	}
-        	
-        	boolean wednesdayIsSelected = setDay(formData, "wednesday");
-        	if (!wednesdayIsSelected) {
+			
+			if ( formData.has("wednesday") ) {
+        		/*
+        		 *  && formData.getJSONObject("monday") != null 
+        			&& formData.getJSONObject("monday").has("mondayBefore") 
+        			&& formData.getJSONObject("monday").has("mondayAfter")
+        		 * */
+        		JSONObject dayField = formData.getJSONObject("wednesday");
+        		setWednesdayBefore(dayField.get("wednesdayBefore").toString());
+        		setWednesdayAfter(dayField.get("wednesdayAfter").toString());   
+               
+        	} else {
         		setWednesdayBefore(null); // todo save checkbox
         		setWednesdayAfter(null);
         	}
-        	
-        	boolean thursdayIsSelected = setDay(formData, "thursday");
-        	if (!thursdayIsSelected) {
+			
+			if ( formData.has("thursday") ) {
+        		/*
+        		 *  && formData.getJSONObject("monday") != null 
+        			&& formData.getJSONObject("monday").has("mondayBefore") 
+        			&& formData.getJSONObject("monday").has("mondayAfter")
+        		 * */
+        		JSONObject dayField = formData.getJSONObject("thursday");
+        		setThursdayBefore(dayField.get("thursdayBefore").toString());
+        		setThursdayAfter(dayField.get("thursdayAfter").toString());   
+               
+        	} else {
         		setThursdayBefore(null); // todo save checkbox
         		setThursdayAfter(null);
         	}
-        	
-        	boolean fridayIsSelected = setDay(formData, "friday");
-        	if (!fridayIsSelected) {
+			
+			if ( formData.has("friday") ) {
+        		/*
+        		 *  && formData.getJSONObject("monday") != null 
+        			&& formData.getJSONObject("monday").has("mondayBefore") 
+        			&& formData.getJSONObject("monday").has("mondayAfter")
+        		 * */
+        		JSONObject dayField = formData.getJSONObject("friday");
+        		setFridayBefore(dayField.get("fridayBefore").toString());
+        		setFridayAfter(dayField.get("fridayAfter").toString());   
+               
+        	} else {
         		setFridayBefore(null); // todo save checkbox
         		setFridayAfter(null);
         	}
-        	
-        	boolean saturdayIsSelected = setDay(formData, "saturday");
-        	if (!saturdayIsSelected) {
+			
+			if ( formData.has("saturday") ) {
+        		/*
+        		 *  && formData.getJSONObject("monday") != null 
+        			&& formData.getJSONObject("monday").has("mondayBefore") 
+        			&& formData.getJSONObject("monday").has("mondayAfter")
+        		 * */
+        		JSONObject dayField = formData.getJSONObject("saturday");
+        		setSaturdayBefore(dayField.get("saturdayBefore").toString());
+        		setSaturdayAfter(dayField.get("saturdayAfter").toString());   
+               
+        	} else {
         		setSaturdayBefore(null); // todo save checkbox
         		setSaturdayAfter(null);
         	}
-        	
-        	boolean sundayIsSelected = setDay(formData, "sunday");
-        	if (!sundayIsSelected) {
+			
+			if ( formData.has("sunday") ) {
+        		/*
+        		 *  && formData.getJSONObject("monday") != null 
+        			&& formData.getJSONObject("monday").has("mondayBefore") 
+        			&& formData.getJSONObject("monday").has("mondayAfter")
+        		 * */
+        		JSONObject dayField = formData.getJSONObject("sunday");
+        		setSundayBefore(dayField.get("sundayBefore").toString());
+        		setSundayAfter(dayField.get("sundayAfter").toString());   
+               
+        	} else {
         		setSundayBefore(null); // todo save checkbox
         		setSundayAfter(null);
         	}
@@ -146,24 +209,33 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         	
             return false;
         }
-
-		private boolean setDay(JSONObject formData, String day) {
-			if ( formData.has(day) ) {
-        		/*
-        		 *  && formData.getJSONObject("monday") != null 
-        			&& formData.getJSONObject("monday").has("mondayBefore") 
-        			&& formData.getJSONObject("monday").has("mondayAfter")
-        		 * */
-        		JSONObject dayField = formData.getJSONObject(day);
-        		setMondayBefore(dayField.get(day+"Before").toString());
-                setMondayAfter(dayField.get(day+"After").toString());   
-                return true;
-        	} 
-			return false;
-		}
 		
 		public boolean monday() {
 			return mondayBefore != null && mondayAfter != null;
+		}
+		
+		public boolean tuesday() {
+			return tuesdayBefore != null && tuesdayAfter != null;
+		}
+		
+		public boolean wednesday() {
+			return wednesdayBefore != null && wednesdayAfter != null;
+		}
+		
+		public boolean thursday() {
+			return thursdayBefore != null && thursdayAfter != null;
+		}
+		
+		public boolean friday() {
+			return fridayBefore != null && fridayAfter != null;
+		}
+		
+		public boolean saturday() {
+			return saturdayBefore != null && saturdayAfter != null;
+		}
+		
+		public boolean sunday() {
+			return sundayBefore != null && sundayAfter != null;
 		}
         
         // todo fill in also values of checkboxes (optional block)

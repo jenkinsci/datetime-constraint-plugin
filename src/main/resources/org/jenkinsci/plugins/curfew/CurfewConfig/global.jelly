@@ -31,7 +31,7 @@
 
   <f:block>
 	  <table>
-	    <f:optionalBlock name="tuesday" field="tuesday" title="Tuesday">
+	    <f:optionalBlock name="tuesday" field="tuesday" title="Tuesday" checked = "${descriptor.tuesday()}">
 		  
 		  <f:entry name="tuesdayBefore" field="tuesdayBefore" title="Before">
 		    <f:select />
@@ -48,7 +48,7 @@
 
   <f:block>
 	  <table>
-	    <f:optionalBlock name="wednesday" field="wednesday" title="Wednesday">
+	    <f:optionalBlock name="wednesday" field="wednesday" title="Wednesday" checked = "${descriptor.wednesday()}">
 		  
 		  <f:entry name="wednesdayBefore" field="wednesdayBefore" title="Before">
 		    <f:select />
@@ -65,7 +65,7 @@
 
   <f:block>
 	  <table>
-	    <f:optionalBlock name="thursday" field="thursday" title="Thursday">
+	    <f:optionalBlock name="thursday" field="thursday" title="Thursday" checked = "${descriptor.thursday()}">
 		  
 		  <f:entry name="thursdayBefore" field="thursdayBefore" title="Before">
 		    <f:select />
@@ -82,7 +82,7 @@
 
   <f:block>
 	  <table>
-	    <f:optionalBlock name="friday" field="friday" title="Friday">
+	    <f:optionalBlock name="friday" field="friday" title="Friday" checked = "${descriptor.friday()}">
 		  
 		  <f:entry name="fridayBefore" field="fridayBefore" title="Before">
 		    <f:select />
@@ -99,7 +99,7 @@
 
   <f:block>
 	  <table>
-	    <f:optionalBlock name="saturday" field="saturday" title="Saturday">
+	    <f:optionalBlock name="saturday" field="saturday" title="Saturday" checked = "${descriptor.saturday()}">
 		  
 		  <f:entry name="saturdayBefore" field="saturdayBefore" title="Before">
 		    <f:select />
@@ -115,7 +115,7 @@
   
     <f:block>
 	  <table>
-	    <f:optionalBlock name="sunday" field="sunday" title="Sunday">
+	    <f:optionalBlock name="sunday" field="sunday" title="Sunday" checked = "${descriptor.sunday()}">
 		  
 	  	  <f:entry name="sundayBefore" field="sundayBefore" title="Before">
 		    <f:select />
