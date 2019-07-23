@@ -112,75 +112,13 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			setWaitTime(formData.getString("waitTime"));
 			setTimeZone(formData.getString("timeZone"));
 
-			if (formData.has("monday")) {
-				JSONObject dayField = formData.getJSONObject("monday");
-				setMondayBefore(dayField.get("mondayBefore").toString());
-				setMondayAfter(dayField.get("mondayAfter").toString());
-
-			} else {
-				setMondayBefore(null);
-				setMondayAfter(null);
-			}
-
-			if (formData.has("tuesday")) {
-				JSONObject dayField = formData.getJSONObject("tuesday");
-				setTuesdayBefore(dayField.get("tuesdayBefore").toString());
-				setTuesdayAfter(dayField.get("tuesdayAfter").toString());
-
-			} else {
-				setTuesdayBefore(null);
-				setTuesdayAfter(null);
-			}
-
-			if (formData.has("wednesday")) {
-				JSONObject dayField = formData.getJSONObject("wednesday");
-				setWednesdayBefore(dayField.get("wednesdayBefore").toString());
-				setWednesdayAfter(dayField.get("wednesdayAfter").toString());
-
-			} else {
-				setWednesdayBefore(null);
-				setWednesdayAfter(null);
-			}
-
-			if (formData.has("thursday")) {
-				JSONObject dayField = formData.getJSONObject("thursday");
-				setThursdayBefore(dayField.get("thursdayBefore").toString());
-				setThursdayAfter(dayField.get("thursdayAfter").toString());
-
-			} else {
-				setThursdayBefore(null);
-				setThursdayAfter(null);
-			}
-
-			if (formData.has("friday")) {
-				JSONObject dayField = formData.getJSONObject("friday");
-				setFridayBefore(dayField.get("fridayBefore").toString());
-				setFridayAfter(dayField.get("fridayAfter").toString());
-
-			} else {
-				setFridayBefore(null);
-				setFridayAfter(null);
-			}
-
-			if (formData.has("saturday")) {
-				JSONObject dayField = formData.getJSONObject("saturday");
-				setSaturdayBefore(dayField.get("saturdayBefore").toString());
-				setSaturdayAfter(dayField.get("saturdayAfter").toString());
-
-			} else {
-				setSaturdayBefore(null);
-				setSaturdayAfter(null);
-			}
-
-			if (formData.has("sunday")) {
-				JSONObject dayField = formData.getJSONObject("sunday");
-				setSundayBefore(dayField.get("sundayBefore").toString());
-				setSundayAfter(dayField.get("sundayAfter").toString());
-
-			} else {
-				setSundayBefore(null);
-				setSundayAfter(null);
-			}
+			setMonday(formData);
+			setTuesday(formData);
+			setWednesday(formData);
+			setThursday(formData);
+			setFriday(formData);
+			setSaturday(formData);
+			setSunday(formData);
 
 			save();
 
@@ -316,6 +254,90 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 
 		public boolean sunday() {
 			return sundayBefore != null && sundayAfter != null;
+		}
+		
+		private void setMonday(JSONObject formData) {
+			if (formData.has("monday")) {
+				JSONObject dayField = formData.getJSONObject("monday");
+				setMondayBefore(dayField.get("mondayBefore").toString());
+				setMondayAfter(dayField.get("mondayAfter").toString());
+
+			} else {
+				setMondayBefore(null);
+				setMondayAfter(null);
+			}
+		}
+		
+		private void setTuesday(JSONObject formData) {
+			if (formData.has("tuesday")) {
+				JSONObject dayField = formData.getJSONObject("tuesday");
+				setTuesdayBefore(dayField.get("tuesdayBefore").toString());
+				setTuesdayAfter(dayField.get("tuesdayAfter").toString());
+
+			} else {
+				setTuesdayBefore(null);
+				setTuesdayAfter(null);
+			}
+		}
+		
+		private void setWednesday(JSONObject formData) {
+			if (formData.has("wednesday")) {
+				JSONObject dayField = formData.getJSONObject("wednesday");
+				setWednesdayBefore(dayField.get("wednesdayBefore").toString());
+				setWednesdayAfter(dayField.get("wednesdayAfter").toString());
+
+			} else {
+				setWednesdayBefore(null);
+				setWednesdayAfter(null);
+			}
+		}
+		
+		private void setThursday(JSONObject formData) {
+			if (formData.has("thursday")) {
+				JSONObject dayField = formData.getJSONObject("thursday");
+				setThursdayBefore(dayField.get("thursdayBefore").toString());
+				setThursdayAfter(dayField.get("thursdayAfter").toString());
+
+			} else {
+				setThursdayBefore(null);
+				setThursdayAfter(null);
+			}
+		}
+		
+		private void setFriday(JSONObject formData) {
+			if (formData.has("friday")) {
+				JSONObject dayField = formData.getJSONObject("friday");
+				setFridayBefore(dayField.get("fridayBefore").toString());
+				setFridayAfter(dayField.get("fridayAfter").toString());
+
+			} else {
+				setFridayBefore(null);
+				setFridayAfter(null);
+			}
+		}
+		
+		private void setSaturday(JSONObject formData) {
+			if (formData.has("saturday")) {
+				JSONObject dayField = formData.getJSONObject("saturday");
+				setSaturdayBefore(dayField.get("saturdayBefore").toString());
+				setSaturdayAfter(dayField.get("saturdayAfter").toString());
+
+			} else {
+				setSaturdayBefore(null);
+				setSaturdayAfter(null);
+			}
+		}
+		
+		private void setSunday(JSONObject formData) {
+			if (formData.has("sunday")) {
+				JSONObject dayField = formData.getJSONObject("sunday");
+				setSundayBefore(dayField.get("sundayBefore").toString());
+				setSundayAfter(dayField.get("sundayAfter").toString());
+
+			} else {
+				setSundayBefore(null);
+				setSundayAfter(null);
+			}
 		}
 
 		public void setMondayBefore(String mondayBefore) {
