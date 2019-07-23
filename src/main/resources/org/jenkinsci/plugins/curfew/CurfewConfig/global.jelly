@@ -14,7 +14,7 @@
   
   <f:block>
 	  <table>
-	    <f:optionalBlock name="monday" field="monday" title="Monday">
+	    <f:optionalBlock name="monday" field="monday" title="Monday" checked = "${descriptor.monday()}">
 		  
 		  <f:entry name="mondayBefore" field="mondayBefore" title="Before">
 		    <f:select />

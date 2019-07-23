@@ -161,6 +161,10 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         	} 
 			return false;
 		}
+		
+		public boolean monday() {
+			return mondayBefore != null && mondayAfter != null;
+		}
         
         // todo fill in also values of checkboxes (optional block)
         
