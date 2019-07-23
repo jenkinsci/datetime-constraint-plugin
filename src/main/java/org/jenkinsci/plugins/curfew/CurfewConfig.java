@@ -2,7 +2,6 @@ package org.jenkinsci.plugins.curfew;
 
 import java.io.IOException;
 import java.time.ZoneId;
-import java.util.Comparator;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -35,7 +34,6 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 
 		private String timeZone = "UTC";
 		
-		// todo put default value to null?
 		private String mondayBefore = "8"; 
 		private String mondayAfter = "16";
 		private String tuesdayBefore = "8"; 
@@ -72,7 +70,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 				
 			curfewVar.setTime("waitTime", curfewModel.getWaitTime() != null ? curfewModel.getWaitTime() : waitTime);
 			curfewVar.setTime("timeZone", curfewModel.getTimeZone() != null ? curfewModel.getTimeZone() : timeZone);
-			// todo remove check if null
+			
 			curfewVar.setTime("mondayBefore", curfewModel.getMondayBefore() != null ? curfewModel.getMondayBefore() : mondayBefore);
 			curfewVar.setTime("mondayAfter", curfewModel.getMondayAfter() != null ? curfewModel.getMondayAfter() : mondayAfter);
 			curfewVar.setTime("tuesdayBefore", curfewModel.getTuesdayBefore() != null ? curfewModel.getTuesdayBefore() : tuesdayBefore);
@@ -101,107 +99,72 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
         	setTimeZone(formData.getString("timeZone"));
         	
 			if ( formData.has("monday") ) {
-        		/*
-        		 *  && formData.getJSONObject("monday") != null 
-        			&& formData.getJSONObject("monday").has("mondayBefore") 
-        			&& formData.getJSONObject("monday").has("mondayAfter")
-        		 * */
         		JSONObject dayField = formData.getJSONObject("monday");
         		setMondayBefore(dayField.get("mondayBefore").toString());
                 setMondayAfter(dayField.get("mondayAfter").toString());   
                
         	} else {
-        		setMondayBefore(null); // todo save checkbox
+        		setMondayBefore(null); 
                 setMondayAfter(null);
         	}
 
 			if ( formData.has("tuesday") ) {
-        		/*
-        		 *  && formData.getJSONObject("monday") != null 
-        			&& formData.getJSONObject("monday").has("mondayBefore") 
-        			&& formData.getJSONObject("monday").has("mondayAfter")
-        		 * */
         		JSONObject dayField = formData.getJSONObject("tuesday");
         		setTuesdayBefore(dayField.get("tuesdayBefore").toString());
         		setTuesdayAfter(dayField.get("tuesdayAfter").toString());   
                
         	} else {
-        		setTuesdayBefore(null); // todo save checkbox
+        		setTuesdayBefore(null);
         		setTuesdayAfter(null);
         	}
 			
 			if ( formData.has("wednesday") ) {
-        		/*
-        		 *  && formData.getJSONObject("monday") != null 
-        			&& formData.getJSONObject("monday").has("mondayBefore") 
-        			&& formData.getJSONObject("monday").has("mondayAfter")
-        		 * */
         		JSONObject dayField = formData.getJSONObject("wednesday");
         		setWednesdayBefore(dayField.get("wednesdayBefore").toString());
         		setWednesdayAfter(dayField.get("wednesdayAfter").toString());   
                
         	} else {
-        		setWednesdayBefore(null); // todo save checkbox
+        		setWednesdayBefore(null); 
         		setWednesdayAfter(null);
         	}
 			
 			if ( formData.has("thursday") ) {
-        		/*
-        		 *  && formData.getJSONObject("monday") != null 
-        			&& formData.getJSONObject("monday").has("mondayBefore") 
-        			&& formData.getJSONObject("monday").has("mondayAfter")
-        		 * */
         		JSONObject dayField = formData.getJSONObject("thursday");
         		setThursdayBefore(dayField.get("thursdayBefore").toString());
         		setThursdayAfter(dayField.get("thursdayAfter").toString());   
                
         	} else {
-        		setThursdayBefore(null); // todo save checkbox
+        		setThursdayBefore(null); 
         		setThursdayAfter(null);
         	}
 			
 			if ( formData.has("friday") ) {
-        		/*
-        		 *  && formData.getJSONObject("monday") != null 
-        			&& formData.getJSONObject("monday").has("mondayBefore") 
-        			&& formData.getJSONObject("monday").has("mondayAfter")
-        		 * */
         		JSONObject dayField = formData.getJSONObject("friday");
         		setFridayBefore(dayField.get("fridayBefore").toString());
         		setFridayAfter(dayField.get("fridayAfter").toString());   
                
         	} else {
-        		setFridayBefore(null); // todo save checkbox
+        		setFridayBefore(null); 
         		setFridayAfter(null);
         	}
 			
 			if ( formData.has("saturday") ) {
-        		/*
-        		 *  && formData.getJSONObject("monday") != null 
-        			&& formData.getJSONObject("monday").has("mondayBefore") 
-        			&& formData.getJSONObject("monday").has("mondayAfter")
-        		 * */
         		JSONObject dayField = formData.getJSONObject("saturday");
         		setSaturdayBefore(dayField.get("saturdayBefore").toString());
         		setSaturdayAfter(dayField.get("saturdayAfter").toString());   
                
         	} else {
-        		setSaturdayBefore(null); // todo save checkbox
+        		setSaturdayBefore(null); 
         		setSaturdayAfter(null);
         	}
 			
 			if ( formData.has("sunday") ) {
-        		/*
-        		 *  && formData.getJSONObject("monday") != null 
-        			&& formData.getJSONObject("monday").has("mondayBefore") 
-        			&& formData.getJSONObject("monday").has("mondayAfter")
-        		 * */
         		JSONObject dayField = formData.getJSONObject("sunday");
         		setSundayBefore(dayField.get("sundayBefore").toString());
         		setSundayAfter(dayField.get("sundayAfter").toString());   
                
         	} else {
-        		setSundayBefore(null); // todo save checkbox
+        		setSundayBefore(null);
         		setSundayAfter(null);
         	}
         	
@@ -237,8 +200,6 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		public boolean sunday() {
 			return sundayBefore != null && sundayAfter != null;
 		}
-        
-        // todo fill in also values of checkboxes (optional block)
         
         public ListBoxModel doFillTimeZoneItems() {
         	ListBoxModel list = new ListBoxModel();
