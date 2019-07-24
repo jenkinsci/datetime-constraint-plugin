@@ -63,7 +63,7 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		}
 
 		@PostConstruct 
-		public void init() {
+		public void setUp() {
 
 			wrapper.setTime(WAIT_TIME, waitTime);
 			wrapper.setTime(TIME_ZONE, timeZone);
@@ -102,7 +102,7 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 			setSaturday(formData);
 			setSunday(formData);
 			
-			init();
+			setUp();
 
 			save();
 
