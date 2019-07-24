@@ -54,8 +54,8 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private String fridayAfter;
 		private String saturdayBefore;
 		private String saturdayAfter;
-		private String sundayAfter;
 		private String sundayBefore;
+		private String sundayAfter;
 
 		public CurfewConfigDesc() {
 			load();
@@ -93,13 +93,21 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 
 			setWaitTime(formData.getString(WAIT_TIME));
 			this.timeZone = formData.getString(TIME_ZONE);
-			setMonday(formData);
-			setTuesday(formData);
-			setWednesday(formData);
-			setThursday(formData);
-			setFriday(formData);
-			setSaturday(formData);
-			setSunday(formData);
+
+			this.mondayBefore = get(formData, MONDAY, BEFORE);
+			this.mondayAfter = get(formData, MONDAY, AFTER);
+			this.tuesdayBefore = get(formData, TUESDAY, BEFORE);
+			this.tuesdayAfter = get(formData, TUESDAY, AFTER);
+			this.wednesdayBefore = get(formData, WEDNESDAY, BEFORE);
+			this.wednesdayAfter = get(formData, WEDNESDAY, AFTER);
+			this.thursdayBefore = get(formData, THURSDAY, BEFORE);
+			this.thursdayAfter = get(formData, THURSDAY, AFTER);
+			this.fridayBefore = get(formData, FRIDAY, BEFORE);
+			this.fridayAfter = get(formData, FRIDAY, AFTER);
+			this.saturdayBefore = get(formData, SATURDAY, BEFORE);
+			this.saturdayAfter = get(formData, SATURDAY, AFTER);
+			this.sundayBefore = get(formData, SUNDAY, BEFORE);
+			this.sundayAfter = get(formData, SUNDAY, AFTER);
 
 			setUp();
 
@@ -107,6 +115,62 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 
 			return false;
 		}
+
+		public void setWaitTime(String waitTime) {
+			try {
+				int t = Integer.parseInt(waitTime);
+				if (t < 15) {
+					t = 15;
+				}
+				waitTime = t + "";
+			} catch (NumberFormatException e) {
+				waitTime = "15";
+			}
+			this.waitTime = waitTime;
+		}
+
+		private String get(JSONObject formData, String day, String limit) {
+			if (formData.has(day)) {
+				return formData.getJSONObject(day).get(day + limit).toString();
+			}
+			return null;
+		}
+
+		// Methods called from jelly -->> 
+
+		public String getWaitTime() {
+			return waitTime;
+		}
+		
+		public boolean monday() {
+			return mondayBefore != null && mondayAfter != null;
+		}
+
+		public boolean tuesday() {
+			return tuesdayBefore != null && tuesdayAfter != null;
+		}
+
+		public boolean wednesday() {
+			return wednesdayBefore != null && wednesdayAfter != null;
+		}
+
+		public boolean thursday() {
+			return thursdayBefore != null && thursdayAfter != null;
+		}
+
+		public boolean friday() {
+			return fridayBefore != null && fridayAfter != null;
+		}
+
+		public boolean saturday() {
+			return saturdayBefore != null && saturdayAfter != null;
+		}
+
+		public boolean sunday() {
+			return sundayBefore != null && sundayAfter != null;
+		}
+		
+		// fill <f:select /> fields
 
 		public ListBoxModel doFillTimeZoneItems() {
 			ListBoxModel list = new ListBoxModel();
@@ -186,135 +250,6 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 				name = "0" + name;
 			}
 			return new Option(name, i + "", ("" + i).equals(field));
-		}
-
-		public String getWaitTime() {
-			return waitTime;
-		}
-
-		public void setWaitTime(String waitTime) {
-			try {
-				int t = Integer.parseInt(waitTime);
-				if (t < 15) {
-					t = 15;
-				}
-				waitTime = t + "";
-			} catch (NumberFormatException e) {
-				waitTime = "15";
-			}
-			this.waitTime = waitTime;
-		}
-
-		public boolean monday() {
-			return mondayBefore != null && mondayAfter != null;
-		}
-
-		public boolean tuesday() {
-			return tuesdayBefore != null && tuesdayAfter != null;
-		}
-
-		public boolean wednesday() {
-			return wednesdayBefore != null && wednesdayAfter != null;
-		}
-
-		public boolean thursday() {
-			return thursdayBefore != null && thursdayAfter != null;
-		}
-
-		public boolean friday() {
-			return fridayBefore != null && fridayAfter != null;
-		}
-
-		public boolean saturday() {
-			return saturdayBefore != null && saturdayAfter != null;
-		}
-
-		public boolean sunday() {
-			return sundayBefore != null && sundayAfter != null;
-		}
-
-		private void setMonday(JSONObject formData) {
-			if (formData.has(MONDAY)) {
-				JSONObject dayField = formData.getJSONObject(MONDAY);
-				this.mondayBefore = dayField.get(MONDAY + BEFORE).toString();
-				this.mondayAfter = dayField.get(MONDAY + AFTER).toString();
-
-			} else {
-				this.mondayBefore = null;
-				this.mondayAfter = null;
-			}
-		}
-
-		private void setTuesday(JSONObject formData) {
-			if (formData.has(TUESDAY)) {
-				JSONObject dayField = formData.getJSONObject(TUESDAY);
-				this.tuesdayBefore = dayField.get(TUESDAY + BEFORE).toString();
-				this.tuesdayAfter = dayField.get(TUESDAY + AFTER).toString();
-
-			} else {
-				this.tuesdayBefore = null;
-				this.tuesdayAfter = null;
-			}
-		}
-
-		private void setWednesday(JSONObject formData) {
-			if (formData.has(WEDNESDAY)) {
-				JSONObject dayField = formData.getJSONObject(WEDNESDAY);
-				this.wednesdayBefore = dayField.get(WEDNESDAY + BEFORE).toString();
-				this.wednesdayAfter = dayField.get(WEDNESDAY + AFTER).toString();
-
-			} else {
-				this.wednesdayBefore = null;
-				this.wednesdayAfter = null;
-			}
-		}
-
-		private void setThursday(JSONObject formData) {
-			if (formData.has(THURSDAY)) {
-				JSONObject dayField = formData.getJSONObject(THURSDAY);
-				this.thursdayBefore = dayField.get(THURSDAY + BEFORE).toString();
-				this.thursdayAfter = dayField.get(THURSDAY + AFTER).toString();
-
-			} else {
-				this.thursdayBefore = null;
-				this.thursdayAfter = null;
-			}
-		}
-
-		private void setFriday(JSONObject formData) {
-			if (formData.has(FRIDAY)) {
-				JSONObject dayField = formData.getJSONObject(FRIDAY);
-				this.fridayBefore = dayField.get(FRIDAY + BEFORE).toString();
-				this.fridayAfter = dayField.get(FRIDAY + AFTER).toString();
-
-			} else {
-				this.fridayBefore = null;
-				this.fridayAfter = null;
-			}
-		}
-
-		private void setSaturday(JSONObject formData) {
-			if (formData.has(SATURDAY)) {
-				JSONObject dayField = formData.getJSONObject(SATURDAY);
-				this.saturdayBefore = dayField.get(SATURDAY + BEFORE).toString();
-				this.saturdayAfter = dayField.get(SATURDAY + AFTER).toString();
-
-			} else {
-				this.saturdayBefore = null;
-				this.saturdayAfter = null;
-			}
-		}
-
-		private void setSunday(JSONObject formData) {
-			if (formData.has(SUNDAY)) {
-				JSONObject dayField = formData.getJSONObject(SUNDAY);
-				this.sundayBefore = dayField.get(SUNDAY + BEFORE).toString();
-				this.sundayAfter = dayField.get(SUNDAY + AFTER).toString();
-
-			} else {
-				this.sundayBefore = null;
-				this.sundayAfter = null;
-			}
 		}
 
 	}
