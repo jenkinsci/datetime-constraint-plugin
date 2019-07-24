@@ -28,27 +28,16 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private static final String WAIT_TIME = "waitTime";
 		private static final String TIME_ZONE = "timeZone";
 		private static final String MONDAY = "monday";
-		private static final String MONDAY_BEFORE = "mondayBefore";
-		private static final String MONDAY_AFTER = "mondayAfter";
 		private static final String TUESDAY = "tuesday";
-		private static final String TUESDAY_BEFORE = "tuesdayBefore";
-		private static final String TUESDAY_AFTER = "tuesdayAfter";
 		private static final String WEDNESDAY = "wednesday";
-		private static final String WEDNESDAY_BEFORE = "wednesdayBefore";
-		private static final String WEDNESDAY_AFTER = "wednesdayAfter";
 		private static final String THURSDAY = "thursday";
-		private static final String THURSDAY_BEFORE = "thursdayBefore";
-		private static final String THURSDAY_AFTER = "thursdayAfter";
 		private static final String FRIDAY = "friday";
-		private static final String FRIDAY_BEFORE = "fridayBefore";
-		private static final String FRIDAY_AFTER = "fridayAfter";
 		private static final String SUNDAY = "sunday";
-		private static final String SUNDAY_BEFORE = "sundayBefore";
-		private static final String SUNDAY_AFTER = "sundayAfter";
 		private static final String SATURDAY = "saturday";
-		private static final String SATURDAY_BEFORE = "saturdayBefore";
-		private static final String SATURDAY_AFTER = "saturdayAfter";
-
+		private static final String BEFORE = "Before";
+		private static final String AFTER = "After";
+		
+		
 		@Inject
 		private transient ScriptWrapper wrapper;
 
@@ -79,20 +68,20 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 			wrapper.setTime(WAIT_TIME, waitTime);
 			wrapper.setTime(TIME_ZONE, timeZone);
 
-			wrapper.setTime(MONDAY_BEFORE, mondayBefore);
-			wrapper.setTime(MONDAY_AFTER, mondayAfter);
-			wrapper.setTime(TUESDAY_BEFORE, tuesdayBefore);
-			wrapper.setTime(TUESDAY_AFTER, tuesdayAfter);
-			wrapper.setTime(WEDNESDAY_BEFORE,wednesdayBefore);
-			wrapper.setTime(WEDNESDAY_AFTER, wednesdayAfter);
-			wrapper.setTime(THURSDAY_BEFORE, thursdayBefore);
-			wrapper.setTime(THURSDAY_AFTER,thursdayAfter);
-			wrapper.setTime(FRIDAY_BEFORE, fridayBefore);
-			wrapper.setTime(FRIDAY_AFTER, fridayAfter);
-			wrapper.setTime(SATURDAY_BEFORE, saturdayBefore);
-			wrapper.setTime(SATURDAY_AFTER, saturdayAfter);
-			wrapper.setTime(SUNDAY_BEFORE, sundayBefore);
-			wrapper.setTime(SUNDAY_AFTER, sundayAfter);
+			wrapper.setTime(MONDAY+BEFORE, mondayBefore);
+			wrapper.setTime(MONDAY+AFTER, mondayAfter);
+			wrapper.setTime(TUESDAY+BEFORE, tuesdayBefore);
+			wrapper.setTime(TUESDAY+AFTER, tuesdayAfter);
+			wrapper.setTime(WEDNESDAY+BEFORE,wednesdayBefore);
+			wrapper.setTime(WEDNESDAY+AFTER, wednesdayAfter);
+			wrapper.setTime(THURSDAY+BEFORE, thursdayBefore);
+			wrapper.setTime(THURSDAY+AFTER,thursdayAfter);
+			wrapper.setTime(FRIDAY+BEFORE, fridayBefore);
+			wrapper.setTime(FRIDAY+AFTER, fridayAfter);
+			wrapper.setTime(SATURDAY+BEFORE, saturdayBefore);
+			wrapper.setTime(SATURDAY+AFTER, saturdayAfter);
+			wrapper.setTime(SUNDAY+BEFORE, sundayBefore);
+			wrapper.setTime(SUNDAY+AFTER, sundayAfter);
 		}
 
 		@Override
@@ -248,8 +237,8 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private void setMonday(JSONObject formData) {
 			if (formData.has(MONDAY)) {
 				JSONObject dayField = formData.getJSONObject(MONDAY);
-				this.mondayBefore = dayField.get(MONDAY_BEFORE).toString();
-				this.mondayAfter = dayField.get(MONDAY_AFTER).toString();
+				this.mondayBefore = dayField.get(MONDAY+BEFORE).toString();
+				this.mondayAfter = dayField.get(MONDAY+AFTER).toString();
 
 			} else {
 				this.mondayBefore = null;
@@ -260,8 +249,8 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private void setTuesday(JSONObject formData) {
 			if (formData.has(TUESDAY)) {
 				JSONObject dayField = formData.getJSONObject(TUESDAY);
-				this.tuesdayBefore = dayField.get(TUESDAY_BEFORE).toString();
-				this.tuesdayAfter = dayField.get(TUESDAY_AFTER).toString();
+				this.tuesdayBefore = dayField.get(TUESDAY+BEFORE).toString();
+				this.tuesdayAfter = dayField.get(TUESDAY+AFTER).toString();
 
 			} else {
 				this.tuesdayBefore = null;
@@ -272,8 +261,8 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private void setWednesday(JSONObject formData) {
 			if (formData.has(WEDNESDAY)) {
 				JSONObject dayField = formData.getJSONObject(WEDNESDAY);
-				this.wednesdayBefore = dayField.get(WEDNESDAY_BEFORE).toString();
-				this.wednesdayAfter = dayField.get(WEDNESDAY_AFTER).toString();
+				this.wednesdayBefore = dayField.get(WEDNESDAY+BEFORE).toString();
+				this.wednesdayAfter = dayField.get(WEDNESDAY+AFTER).toString();
 
 			} else {
 				this.wednesdayBefore = null;
@@ -284,8 +273,8 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private void setThursday(JSONObject formData) {
 			if (formData.has(THURSDAY)) {
 				JSONObject dayField = formData.getJSONObject(THURSDAY);
-				this.thursdayBefore = dayField.get(THURSDAY_BEFORE).toString();
-				this.thursdayAfter = dayField.get(THURSDAY_AFTER).toString();
+				this.thursdayBefore = dayField.get(THURSDAY+BEFORE).toString();
+				this.thursdayAfter = dayField.get(THURSDAY+AFTER).toString();
 
 			} else {
 				this.thursdayBefore = null;
@@ -296,8 +285,8 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private void setFriday(JSONObject formData) {
 			if (formData.has(FRIDAY)) {
 				JSONObject dayField = formData.getJSONObject(FRIDAY);
-				this.fridayBefore = dayField.get(FRIDAY_BEFORE).toString();
-				this.fridayAfter = dayField.get(FRIDAY_AFTER).toString();
+				this.fridayBefore = dayField.get(FRIDAY+BEFORE).toString();
+				this.fridayAfter = dayField.get(FRIDAY+AFTER).toString();
 
 			} else {
 				this.fridayBefore = null;
@@ -308,8 +297,8 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private void setSaturday(JSONObject formData) {
 			if (formData.has(SATURDAY)) {
 				JSONObject dayField = formData.getJSONObject(SATURDAY);
-				this.saturdayBefore = dayField.get(SATURDAY_BEFORE).toString();
-				this.saturdayAfter = dayField.get(SATURDAY_AFTER).toString();
+				this.saturdayBefore = dayField.get(SATURDAY+BEFORE).toString();
+				this.saturdayAfter = dayField.get(SATURDAY+AFTER).toString();
 
 			} else {
 				this.saturdayBefore = null;
@@ -320,8 +309,8 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private void setSunday(JSONObject formData) {
 			if (formData.has(SUNDAY)) {
 				JSONObject dayField = formData.getJSONObject(SUNDAY);
-				this.sundayBefore = dayField.get(SUNDAY_BEFORE).toString();
-				this.sundayAfter = dayField.get(SUNDAY_AFTER).toString();
+				this.sundayBefore = dayField.get(SUNDAY+BEFORE).toString();
+				this.sundayAfter = dayField.get(SUNDAY+AFTER).toString();
 
 			} else {
 				this.sundayBefore = null;
