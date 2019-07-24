@@ -56,49 +56,23 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		@PostConstruct 
 		public void init() {
 
-			XmlFile config = getConfigFile();
-			CurfewModel curfewModel = new CurfewModel();
-			try {
-				if (config != null && config.exists()) {
-					config.unmarshal(curfewModel);
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-			// todo move this to GlobalVar
+			curfewVar.setTime("waitTime", waitTime);
+			curfewVar.setTime("timeZone", timeZone);
 
-			curfewVar.setTime("waitTime", curfewModel.getWaitTime() != null ? curfewModel.getWaitTime() : waitTime);
-			curfewVar.setTime("timeZone", curfewModel.getTimeZone() != null ? curfewModel.getTimeZone() : timeZone);
-
-			curfewVar.setTime("mondayBefore",
-					curfewModel.getMondayBefore() != null ? curfewModel.getMondayBefore() : mondayBefore);
-			curfewVar.setTime("mondayAfter",
-					curfewModel.getMondayAfter() != null ? curfewModel.getMondayAfter() : mondayAfter);
-			curfewVar.setTime("tuesdayBefore",
-					curfewModel.getTuesdayBefore() != null ? curfewModel.getTuesdayBefore() : tuesdayBefore);
-			curfewVar.setTime("tuesdayAfter",
-					curfewModel.getTuesdayAfter() != null ? curfewModel.getTuesdayAfter() : tuesdayAfter);
-			curfewVar.setTime("wednesdayBefore",
-					curfewModel.getWednesdayBefore() != null ? curfewModel.getWednesdayBefore() : wednesdayBefore);
-			curfewVar.setTime("wednesdayAfter",
-					curfewModel.getWednesdayAfter() != null ? curfewModel.getWednesdayAfter() : wednesdayAfter);
-			curfewVar.setTime("thursdayBefore",
-					curfewModel.getThursdayBefore() != null ? curfewModel.getThursdayBefore() : thursdayBefore);
-			curfewVar.setTime("thursdayAfter",
-					curfewModel.getThursdayAfter() != null ? curfewModel.getThursdayAfter() : thursdayAfter);
-			curfewVar.setTime("fridayBefore",
-					curfewModel.getFridayBefore() != null ? curfewModel.getFridayBefore() : fridayBefore);
-			curfewVar.setTime("fridayAfter",
-					curfewModel.getFridayAfter() != null ? curfewModel.getFridayAfter() : fridayAfter);
-			curfewVar.setTime("saturdayBefore",
-					curfewModel.getSaturdayBefore() != null ? curfewModel.getSaturdayBefore() : saturdayBefore);
-			curfewVar.setTime("saturdayAfter",
-					curfewModel.getSaturdayAfter() != null ? curfewModel.getSaturdayAfter() : saturdayAfter);
-			curfewVar.setTime("sundayBefore",
-					curfewModel.getSundayBefore() != null ? curfewModel.getSundayBefore() : sundayBefore);
-			curfewVar.setTime("sundayAfter",
-					curfewModel.getSundayAfter() != null ? curfewModel.getSundayAfter() : sundayAfter);
+			curfewVar.setTime("mondayBefore", mondayBefore);
+			curfewVar.setTime("mondayAfter", mondayAfter);
+			curfewVar.setTime("tuesdayBefore", tuesdayBefore);
+			curfewVar.setTime("tuesdayAfter", tuesdayAfter);
+			curfewVar.setTime("wednesdayBefore",wednesdayBefore);
+			curfewVar.setTime("wednesdayAfter", wednesdayAfter);
+			curfewVar.setTime("thursdayBefore", thursdayBefore);
+			curfewVar.setTime("thursdayAfter",thursdayAfter);
+			curfewVar.setTime("fridayBefore", fridayBefore);
+			curfewVar.setTime("fridayAfter", fridayAfter);
+			curfewVar.setTime("saturdayBefore", saturdayBefore);
+			curfewVar.setTime("saturdayAfter", saturdayAfter);
+			curfewVar.setTime("sundayBefore", sundayBefore);
+			curfewVar.setTime("sundayAfter", sundayAfter);
 		}
 
 		@Override
