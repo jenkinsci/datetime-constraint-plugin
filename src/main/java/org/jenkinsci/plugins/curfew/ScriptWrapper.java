@@ -11,7 +11,7 @@ import org.jenkinsci.plugins.workflow.cps.GlobalVariable;
 import groovy.lang.Binding;
 
 @Extension
-public class CurfewGlobalVariable extends GlobalVariable{
+public class ScriptWrapper extends GlobalVariable {
 	
 	private Map<String, String> times = new HashMap<String, String>(); 
 

@@ -15,10 +15,10 @@ import hudson.util.ListBoxModel.Option;
 import jenkins.model.GlobalConfiguration;
 import net.sf.json.JSONObject;
 
-public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
+public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 
 	@DataBoundConstructor
-	public CurfewConfig() {
+	public Customizer() {
 		super();
 	}
 
@@ -50,7 +50,7 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		private static final String SATURDAY_AFTER = "saturdayAfter";
 
 		@Inject
-		private transient CurfewGlobalVariable curfewVar;
+		private transient ScriptWrapper wrapper;
 
 		private String waitTime = "30"; // in seconds
 		private String timeZone = "UTC";
@@ -76,28 +76,28 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		@PostConstruct 
 		public void init() {
 
-			curfewVar.setTime(WAIT_TIME, waitTime);
-			curfewVar.setTime(TIME_ZONE, timeZone);
+			wrapper.setTime(WAIT_TIME, waitTime);
+			wrapper.setTime(TIME_ZONE, timeZone);
 
-			curfewVar.setTime(MONDAY_BEFORE, mondayBefore);
-			curfewVar.setTime(MONDAY_AFTER, mondayAfter);
-			curfewVar.setTime(TUESDAY_BEFORE, tuesdayBefore);
-			curfewVar.setTime(TUESDAY_AFTER, tuesdayAfter);
-			curfewVar.setTime(WEDNESDAY_BEFORE,wednesdayBefore);
-			curfewVar.setTime(WEDNESDAY_AFTER, wednesdayAfter);
-			curfewVar.setTime(THURSDAY_BEFORE, thursdayBefore);
-			curfewVar.setTime(THURSDAY_AFTER,thursdayAfter);
-			curfewVar.setTime(FRIDAY_BEFORE, fridayBefore);
-			curfewVar.setTime(FRIDAY_AFTER, fridayAfter);
-			curfewVar.setTime(SATURDAY_BEFORE, saturdayBefore);
-			curfewVar.setTime(SATURDAY_AFTER, saturdayAfter);
-			curfewVar.setTime(SUNDAY_BEFORE, sundayBefore);
-			curfewVar.setTime(SUNDAY_AFTER, sundayAfter);
+			wrapper.setTime(MONDAY_BEFORE, mondayBefore);
+			wrapper.setTime(MONDAY_AFTER, mondayAfter);
+			wrapper.setTime(TUESDAY_BEFORE, tuesdayBefore);
+			wrapper.setTime(TUESDAY_AFTER, tuesdayAfter);
+			wrapper.setTime(WEDNESDAY_BEFORE,wednesdayBefore);
+			wrapper.setTime(WEDNESDAY_AFTER, wednesdayAfter);
+			wrapper.setTime(THURSDAY_BEFORE, thursdayBefore);
+			wrapper.setTime(THURSDAY_AFTER,thursdayAfter);
+			wrapper.setTime(FRIDAY_BEFORE, fridayBefore);
+			wrapper.setTime(FRIDAY_AFTER, fridayAfter);
+			wrapper.setTime(SATURDAY_BEFORE, saturdayBefore);
+			wrapper.setTime(SATURDAY_AFTER, saturdayAfter);
+			wrapper.setTime(SUNDAY_BEFORE, sundayBefore);
+			wrapper.setTime(SUNDAY_AFTER, sundayAfter);
 		}
 
 		@Override
 		public String getDisplayName() {
-			return "Curfew timeframes";
+			return "Curfew";
 		}
 
 		@Override

@@ -19,7 +19,7 @@ public class Curfew implements Serializable {
 		if (checkPoint()) {
 			def t = times.get("waitTime") != null ? times.get("waitTime").toInteger() : 15
 			script.timeout (time: t, unit: 'SECONDS') {
-				script.input ("Hey proceed plz")
+				script.input ("Approval is required ...")
 			}
 		}
 	}
