@@ -12,8 +12,8 @@ import groovy.lang.Binding;
 
 @Extension
 public class ScriptWrapper extends GlobalVariable {
-	
-	private Map<String, String> times = new HashMap<String, String>(); 
+
+	private Map<String, String> times = new HashMap<String, String>();
 
 	@Override
 	public String getName() {
@@ -23,20 +23,20 @@ public class ScriptWrapper extends GlobalVariable {
 	@Override
 	public Object getValue(CpsScript script) throws Exception {
 		Binding binding = script.getBinding();
-        Object curfew;
-        if (binding.hasVariable(getName())) {
-        	curfew = binding.getVariable(getName());
-        } else {
-        	curfew = script.getClass().getClassLoader().loadClass("org.jenkinsci.plugins.curfew.Curfew")
-        			.getConstructor(CpsScript.class, Map.class).newInstance(script, times);
-            binding.setVariable(getName(), curfew);
-        }
-        
-	    return curfew;
+		Object curfew;
+		if (binding.hasVariable(getName())) {
+			curfew = binding.getVariable(getName());
+		} else {
+			curfew = script.getClass().getClassLoader().loadClass("org.jenkinsci.plugins.curfew.Curfew")
+					.getConstructor(CpsScript.class, Map.class).newInstance(script, times);
+			binding.setVariable(getName(), curfew);
+		}
+
+		return curfew;
 	}
-	
+
 	public void setTime(String key, String value) {
-		times.put(key, value); 
+		times.put(key, value);
 	}
-	
+
 }

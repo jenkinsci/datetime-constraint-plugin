@@ -36,8 +36,7 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		private static final String SATURDAY = "saturday";
 		private static final String BEFORE = "Before";
 		private static final String AFTER = "After";
-		
-		
+
 		@Inject
 		private transient ScriptWrapper wrapper;
 
@@ -62,26 +61,26 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 			load();
 		}
 
-		@PostConstruct 
+		@PostConstruct
 		public void setUp() {
 
 			wrapper.setTime(WAIT_TIME, waitTime);
 			wrapper.setTime(TIME_ZONE, timeZone);
 
-			wrapper.setTime(MONDAY+BEFORE, mondayBefore);
-			wrapper.setTime(MONDAY+AFTER, mondayAfter);
-			wrapper.setTime(TUESDAY+BEFORE, tuesdayBefore);
-			wrapper.setTime(TUESDAY+AFTER, tuesdayAfter);
-			wrapper.setTime(WEDNESDAY+BEFORE,wednesdayBefore);
-			wrapper.setTime(WEDNESDAY+AFTER, wednesdayAfter);
-			wrapper.setTime(THURSDAY+BEFORE, thursdayBefore);
-			wrapper.setTime(THURSDAY+AFTER,thursdayAfter);
-			wrapper.setTime(FRIDAY+BEFORE, fridayBefore);
-			wrapper.setTime(FRIDAY+AFTER, fridayAfter);
-			wrapper.setTime(SATURDAY+BEFORE, saturdayBefore);
-			wrapper.setTime(SATURDAY+AFTER, saturdayAfter);
-			wrapper.setTime(SUNDAY+BEFORE, sundayBefore);
-			wrapper.setTime(SUNDAY+AFTER, sundayAfter);
+			wrapper.setTime(MONDAY + BEFORE, mondayBefore);
+			wrapper.setTime(MONDAY + AFTER, mondayAfter);
+			wrapper.setTime(TUESDAY + BEFORE, tuesdayBefore);
+			wrapper.setTime(TUESDAY + AFTER, tuesdayAfter);
+			wrapper.setTime(WEDNESDAY + BEFORE, wednesdayBefore);
+			wrapper.setTime(WEDNESDAY + AFTER, wednesdayAfter);
+			wrapper.setTime(THURSDAY + BEFORE, thursdayBefore);
+			wrapper.setTime(THURSDAY + AFTER, thursdayAfter);
+			wrapper.setTime(FRIDAY + BEFORE, fridayBefore);
+			wrapper.setTime(FRIDAY + AFTER, fridayAfter);
+			wrapper.setTime(SATURDAY + BEFORE, saturdayBefore);
+			wrapper.setTime(SATURDAY + AFTER, saturdayAfter);
+			wrapper.setTime(SUNDAY + BEFORE, sundayBefore);
+			wrapper.setTime(SUNDAY + AFTER, sundayAfter);
 		}
 
 		@Override
@@ -101,7 +100,7 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 			setFriday(formData);
 			setSaturday(formData);
 			setSunday(formData);
-			
+
 			setUp();
 
 			save();
@@ -186,7 +185,7 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 			if (i < 10) {
 				name = "0" + name;
 			}
-			return new Option(name, i + "", ("" + i).equals(field)); 
+			return new Option(name, i + "", ("" + i).equals(field));
 		}
 
 		public String getWaitTime() {
@@ -233,84 +232,84 @@ public class Customizer extends jenkins.model.GlobalPluginConfiguration {
 		public boolean sunday() {
 			return sundayBefore != null && sundayAfter != null;
 		}
-		
+
 		private void setMonday(JSONObject formData) {
 			if (formData.has(MONDAY)) {
 				JSONObject dayField = formData.getJSONObject(MONDAY);
-				this.mondayBefore = dayField.get(MONDAY+BEFORE).toString();
-				this.mondayAfter = dayField.get(MONDAY+AFTER).toString();
+				this.mondayBefore = dayField.get(MONDAY + BEFORE).toString();
+				this.mondayAfter = dayField.get(MONDAY + AFTER).toString();
 
 			} else {
 				this.mondayBefore = null;
 				this.mondayAfter = null;
 			}
 		}
-		
+
 		private void setTuesday(JSONObject formData) {
 			if (formData.has(TUESDAY)) {
 				JSONObject dayField = formData.getJSONObject(TUESDAY);
-				this.tuesdayBefore = dayField.get(TUESDAY+BEFORE).toString();
-				this.tuesdayAfter = dayField.get(TUESDAY+AFTER).toString();
+				this.tuesdayBefore = dayField.get(TUESDAY + BEFORE).toString();
+				this.tuesdayAfter = dayField.get(TUESDAY + AFTER).toString();
 
 			} else {
 				this.tuesdayBefore = null;
 				this.tuesdayAfter = null;
 			}
 		}
-		
+
 		private void setWednesday(JSONObject formData) {
 			if (formData.has(WEDNESDAY)) {
 				JSONObject dayField = formData.getJSONObject(WEDNESDAY);
-				this.wednesdayBefore = dayField.get(WEDNESDAY+BEFORE).toString();
-				this.wednesdayAfter = dayField.get(WEDNESDAY+AFTER).toString();
+				this.wednesdayBefore = dayField.get(WEDNESDAY + BEFORE).toString();
+				this.wednesdayAfter = dayField.get(WEDNESDAY + AFTER).toString();
 
 			} else {
 				this.wednesdayBefore = null;
 				this.wednesdayAfter = null;
 			}
 		}
-		
+
 		private void setThursday(JSONObject formData) {
 			if (formData.has(THURSDAY)) {
 				JSONObject dayField = formData.getJSONObject(THURSDAY);
-				this.thursdayBefore = dayField.get(THURSDAY+BEFORE).toString();
-				this.thursdayAfter = dayField.get(THURSDAY+AFTER).toString();
+				this.thursdayBefore = dayField.get(THURSDAY + BEFORE).toString();
+				this.thursdayAfter = dayField.get(THURSDAY + AFTER).toString();
 
 			} else {
 				this.thursdayBefore = null;
 				this.thursdayAfter = null;
 			}
 		}
-		
+
 		private void setFriday(JSONObject formData) {
 			if (formData.has(FRIDAY)) {
 				JSONObject dayField = formData.getJSONObject(FRIDAY);
-				this.fridayBefore = dayField.get(FRIDAY+BEFORE).toString();
-				this.fridayAfter = dayField.get(FRIDAY+AFTER).toString();
+				this.fridayBefore = dayField.get(FRIDAY + BEFORE).toString();
+				this.fridayAfter = dayField.get(FRIDAY + AFTER).toString();
 
 			} else {
 				this.fridayBefore = null;
 				this.fridayAfter = null;
 			}
 		}
-		
+
 		private void setSaturday(JSONObject formData) {
 			if (formData.has(SATURDAY)) {
 				JSONObject dayField = formData.getJSONObject(SATURDAY);
-				this.saturdayBefore = dayField.get(SATURDAY+BEFORE).toString();
-				this.saturdayAfter = dayField.get(SATURDAY+AFTER).toString();
+				this.saturdayBefore = dayField.get(SATURDAY + BEFORE).toString();
+				this.saturdayAfter = dayField.get(SATURDAY + AFTER).toString();
 
 			} else {
 				this.saturdayBefore = null;
 				this.saturdayAfter = null;
 			}
 		}
-		
+
 		private void setSunday(JSONObject formData) {
 			if (formData.has(SUNDAY)) {
 				JSONObject dayField = formData.getJSONObject(SUNDAY);
-				this.sundayBefore = dayField.get(SUNDAY+BEFORE).toString();
-				this.sundayAfter = dayField.get(SUNDAY+AFTER).toString();
+				this.sundayBefore = dayField.get(SUNDAY + BEFORE).toString();
+				this.sundayAfter = dayField.get(SUNDAY + AFTER).toString();
 
 			} else {
 				this.sundayBefore = null;
