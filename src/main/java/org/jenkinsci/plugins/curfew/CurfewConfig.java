@@ -1,6 +1,5 @@
 package org.jenkinsci.plugins.curfew;
 
-import java.io.IOException;
 import java.time.ZoneId;
 
 import javax.annotation.PostConstruct;
@@ -10,7 +9,6 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
 import hudson.Extension;
-import hudson.XmlFile;
 import hudson.model.Descriptor;
 import hudson.util.ListBoxModel;
 import hudson.util.ListBoxModel.Option;
@@ -27,13 +25,35 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 	@Extension
 	public static final class CurfewConfigDesc extends Descriptor<GlobalConfiguration> {
 
+		private static final String WAIT_TIME = "waitTime";
+		private static final String TIME_ZONE = "timeZone";
+		private static final String MONDAY = "monday";
+		private static final String MONDAY_BEFORE = "mondayBefore";
+		private static final String MONDAY_AFTER = "mondayAfter";
+		private static final String TUESDAY = "tuesday";
+		private static final String TUESDAY_BEFORE = "tuesdayBefore";
+		private static final String TUESDAY_AFTER = "tuesdayAfter";
+		private static final String WEDNESDAY = "wednesday";
+		private static final String WEDNESDAY_BEFORE = "wednesdayBefore";
+		private static final String WEDNESDAY_AFTER = "wednesdayAfter";
+		private static final String THURSDAY = "thursday";
+		private static final String THURSDAY_BEFORE = "thursdayBefore";
+		private static final String THURSDAY_AFTER = "thursdayAfter";
+		private static final String FRIDAY = "friday";
+		private static final String FRIDAY_BEFORE = "fridayBefore";
+		private static final String FRIDAY_AFTER = "fridayAfter";
+		private static final String SUNDAY = "sunday";
+		private static final String SUNDAY_BEFORE = "sundayBefore";
+		private static final String SUNDAY_AFTER = "sundayAfter";
+		private static final String SATURDAY = "saturday";
+		private static final String SATURDAY_BEFORE = "saturdayBefore";
+		private static final String SATURDAY_AFTER = "saturdayAfter";
+
 		@Inject
 		private transient CurfewGlobalVariable curfewVar;
 
 		private String waitTime = "30"; // in seconds
-
 		private String timeZone = "UTC";
-
 		private String mondayBefore;
 		private String mondayAfter;
 		private String tuesdayBefore;
@@ -56,23 +76,23 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		@PostConstruct 
 		public void init() {
 
-			curfewVar.setTime("waitTime", waitTime);
-			curfewVar.setTime("timeZone", timeZone);
+			curfewVar.setTime(WAIT_TIME, waitTime);
+			curfewVar.setTime(TIME_ZONE, timeZone);
 
-			curfewVar.setTime("mondayBefore", mondayBefore);
-			curfewVar.setTime("mondayAfter", mondayAfter);
-			curfewVar.setTime("tuesdayBefore", tuesdayBefore);
-			curfewVar.setTime("tuesdayAfter", tuesdayAfter);
-			curfewVar.setTime("wednesdayBefore",wednesdayBefore);
-			curfewVar.setTime("wednesdayAfter", wednesdayAfter);
-			curfewVar.setTime("thursdayBefore", thursdayBefore);
-			curfewVar.setTime("thursdayAfter",thursdayAfter);
-			curfewVar.setTime("fridayBefore", fridayBefore);
-			curfewVar.setTime("fridayAfter", fridayAfter);
-			curfewVar.setTime("saturdayBefore", saturdayBefore);
-			curfewVar.setTime("saturdayAfter", saturdayAfter);
-			curfewVar.setTime("sundayBefore", sundayBefore);
-			curfewVar.setTime("sundayAfter", sundayAfter);
+			curfewVar.setTime(MONDAY_BEFORE, mondayBefore);
+			curfewVar.setTime(MONDAY_AFTER, mondayAfter);
+			curfewVar.setTime(TUESDAY_BEFORE, tuesdayBefore);
+			curfewVar.setTime(TUESDAY_AFTER, tuesdayAfter);
+			curfewVar.setTime(WEDNESDAY_BEFORE,wednesdayBefore);
+			curfewVar.setTime(WEDNESDAY_AFTER, wednesdayAfter);
+			curfewVar.setTime(THURSDAY_BEFORE, thursdayBefore);
+			curfewVar.setTime(THURSDAY_AFTER,thursdayAfter);
+			curfewVar.setTime(FRIDAY_BEFORE, fridayBefore);
+			curfewVar.setTime(FRIDAY_AFTER, fridayAfter);
+			curfewVar.setTime(SATURDAY_BEFORE, saturdayBefore);
+			curfewVar.setTime(SATURDAY_AFTER, saturdayAfter);
+			curfewVar.setTime(SUNDAY_BEFORE, sundayBefore);
+			curfewVar.setTime(SUNDAY_AFTER, sundayAfter);
 		}
 
 		@Override
@@ -83,9 +103,8 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		@Override
 		public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
 
-			setWaitTime(formData.getString("waitTime"));
-			setTimeZone(formData.getString("timeZone"));
-
+			setWaitTime(formData.getString(WAIT_TIME));
+			this.timeZone = formData.getString(TIME_ZONE);
 			setMonday(formData);
 			setTuesday(formData);
 			setWednesday(formData);
@@ -93,6 +112,8 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			setFriday(formData);
 			setSaturday(formData);
 			setSunday(formData);
+			
+			init();
 
 			save();
 
@@ -193,15 +214,9 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 			} catch (NumberFormatException e) {
 				waitTime = "15";
 			}
-			curfewVar.setTime("waitTime", waitTime);
 			this.waitTime = waitTime;
 		}
 
-		public void setTimeZone(String timeZone) {
-			curfewVar.setTime("timeZone", timeZone);
-			this.timeZone = timeZone;
-		}
-		
 		public boolean monday() {
 			return mondayBefore != null && mondayAfter != null;
 		}
@@ -231,157 +246,87 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 		}
 		
 		private void setMonday(JSONObject formData) {
-			if (formData.has("monday")) {
-				JSONObject dayField = formData.getJSONObject("monday");
-				setMondayBefore(dayField.get("mondayBefore").toString());
-				setMondayAfter(dayField.get("mondayAfter").toString());
+			if (formData.has(MONDAY)) {
+				JSONObject dayField = formData.getJSONObject(MONDAY);
+				this.mondayBefore = dayField.get(MONDAY_BEFORE).toString();
+				this.mondayAfter = dayField.get(MONDAY_AFTER).toString();
 
 			} else {
-				setMondayBefore(null);
-				setMondayAfter(null);
+				this.mondayBefore = null;
+				this.mondayAfter = null;
 			}
 		}
 		
 		private void setTuesday(JSONObject formData) {
-			if (formData.has("tuesday")) {
-				JSONObject dayField = formData.getJSONObject("tuesday");
-				setTuesdayBefore(dayField.get("tuesdayBefore").toString());
-				setTuesdayAfter(dayField.get("tuesdayAfter").toString());
+			if (formData.has(TUESDAY)) {
+				JSONObject dayField = formData.getJSONObject(TUESDAY);
+				this.tuesdayBefore = dayField.get(TUESDAY_BEFORE).toString();
+				this.tuesdayAfter = dayField.get(TUESDAY_AFTER).toString();
 
 			} else {
-				setTuesdayBefore(null);
-				setTuesdayAfter(null);
+				this.tuesdayBefore = null;
+				this.tuesdayAfter = null;
 			}
 		}
 		
 		private void setWednesday(JSONObject formData) {
-			if (formData.has("wednesday")) {
-				JSONObject dayField = formData.getJSONObject("wednesday");
-				setWednesdayBefore(dayField.get("wednesdayBefore").toString());
-				setWednesdayAfter(dayField.get("wednesdayAfter").toString());
+			if (formData.has(WEDNESDAY)) {
+				JSONObject dayField = formData.getJSONObject(WEDNESDAY);
+				this.wednesdayBefore = dayField.get(WEDNESDAY_BEFORE).toString();
+				this.wednesdayAfter = dayField.get(WEDNESDAY_AFTER).toString();
 
 			} else {
-				setWednesdayBefore(null);
-				setWednesdayAfter(null);
+				this.wednesdayBefore = null;
+				this.wednesdayAfter = null;
 			}
 		}
 		
 		private void setThursday(JSONObject formData) {
-			if (formData.has("thursday")) {
-				JSONObject dayField = formData.getJSONObject("thursday");
-				setThursdayBefore(dayField.get("thursdayBefore").toString());
-				setThursdayAfter(dayField.get("thursdayAfter").toString());
+			if (formData.has(THURSDAY)) {
+				JSONObject dayField = formData.getJSONObject(THURSDAY);
+				this.thursdayBefore = dayField.get(THURSDAY_BEFORE).toString();
+				this.thursdayAfter = dayField.get(THURSDAY_AFTER).toString();
 
 			} else {
-				setThursdayBefore(null);
-				setThursdayAfter(null);
+				this.thursdayBefore = null;
+				this.thursdayAfter = null;
 			}
 		}
 		
 		private void setFriday(JSONObject formData) {
-			if (formData.has("friday")) {
-				JSONObject dayField = formData.getJSONObject("friday");
-				setFridayBefore(dayField.get("fridayBefore").toString());
-				setFridayAfter(dayField.get("fridayAfter").toString());
+			if (formData.has(FRIDAY)) {
+				JSONObject dayField = formData.getJSONObject(FRIDAY);
+				this.fridayBefore = dayField.get(FRIDAY_BEFORE).toString();
+				this.fridayAfter = dayField.get(FRIDAY_AFTER).toString();
 
 			} else {
-				setFridayBefore(null);
-				setFridayAfter(null);
+				this.fridayBefore = null;
+				this.fridayAfter = null;
 			}
 		}
 		
 		private void setSaturday(JSONObject formData) {
-			if (formData.has("saturday")) {
-				JSONObject dayField = formData.getJSONObject("saturday");
-				setSaturdayBefore(dayField.get("saturdayBefore").toString());
-				setSaturdayAfter(dayField.get("saturdayAfter").toString());
+			if (formData.has(SATURDAY)) {
+				JSONObject dayField = formData.getJSONObject(SATURDAY);
+				this.saturdayBefore = dayField.get(SATURDAY_BEFORE).toString();
+				this.saturdayAfter = dayField.get(SATURDAY_AFTER).toString();
 
 			} else {
-				setSaturdayBefore(null);
-				setSaturdayAfter(null);
+				this.saturdayBefore = null;
+				this.saturdayAfter = null;
 			}
 		}
 		
 		private void setSunday(JSONObject formData) {
-			if (formData.has("sunday")) {
-				JSONObject dayField = formData.getJSONObject("sunday");
-				setSundayBefore(dayField.get("sundayBefore").toString());
-				setSundayAfter(dayField.get("sundayAfter").toString());
+			if (formData.has(SUNDAY)) {
+				JSONObject dayField = formData.getJSONObject(SUNDAY);
+				this.sundayBefore = dayField.get(SUNDAY_BEFORE).toString();
+				this.sundayAfter = dayField.get(SUNDAY_AFTER).toString();
 
 			} else {
-				setSundayBefore(null);
-				setSundayAfter(null);
+				this.sundayBefore = null;
+				this.sundayAfter = null;
 			}
-		}
-
-		public void setMondayBefore(String mondayBefore) {
-			curfewVar.setTime("mondayBefore", mondayBefore);
-			this.mondayBefore = mondayBefore;
-		}
-
-		public void setMondayAfter(String mondayAfter) {
-			curfewVar.setTime("mondayAfter", mondayAfter);
-			this.mondayAfter = mondayAfter;
-		}
-
-		public void setTuesdayBefore(String tuesdayBefore) {
-			curfewVar.setTime("tuesdayBefore", tuesdayBefore);
-			this.tuesdayBefore = tuesdayBefore;
-		}
-
-		public void setTuesdayAfter(String tuesdayAfter) {
-			curfewVar.setTime("tuesdayAfter", tuesdayAfter);
-			this.tuesdayAfter = tuesdayAfter;
-		}
-
-		public void setWednesdayBefore(String wednesdayBefore) {
-			curfewVar.setTime("wednesdayBefore", wednesdayBefore);
-			this.wednesdayBefore = wednesdayBefore;
-		}
-
-		public void setWednesdayAfter(String wednesdayAfter) {
-			curfewVar.setTime("wednesdayAfter", wednesdayAfter);
-			this.wednesdayAfter = wednesdayAfter;
-		}
-
-		public void setThursdayBefore(String thursdayBefore) {
-			curfewVar.setTime("thursdayBefore", thursdayBefore);
-			this.thursdayBefore = thursdayBefore;
-		}
-
-		public void setThursdayAfter(String thursdayAfter) {
-			curfewVar.setTime("thursdayAfter", thursdayAfter);
-			this.thursdayAfter = thursdayAfter;
-		}
-
-		public void setFridayBefore(String fridayBefore) {
-			curfewVar.setTime("fridayBefore", fridayBefore);
-			this.fridayBefore = fridayBefore;
-		}
-
-		public void setFridayAfter(String fridayAfter) {
-			curfewVar.setTime("fridayAfter", fridayAfter);
-			this.fridayAfter = fridayAfter;
-		}
-
-		public void setSaturdayBefore(String saturdayBefore) {
-			curfewVar.setTime("saturdayBefore", saturdayBefore);
-			this.saturdayBefore = saturdayBefore;
-		}
-
-		public void setSaturdayAfter(String saturdayAfter) {
-			curfewVar.setTime("saturdayAfter", saturdayAfter);
-			this.saturdayAfter = saturdayAfter;
-		}
-
-		public void setSundayAfter(String sundayAfter) {
-			curfewVar.setTime("sundayAfter", sundayAfter);
-			this.sundayAfter = sundayAfter;
-		}
-
-		public void setSundayBefore(String sundayBefore) {
-			curfewVar.setTime("sundayBefore", sundayBefore);
-			this.sundayBefore = sundayBefore;
 		}
 
 	}
