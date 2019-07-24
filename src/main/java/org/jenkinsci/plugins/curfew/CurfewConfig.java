@@ -34,20 +34,20 @@ public class CurfewConfig extends jenkins.model.GlobalPluginConfiguration {
 
 		private String timeZone = "UTC";
 
-		private String mondayBefore = "8";
-		private String mondayAfter = "16";
-		private String tuesdayBefore = "8";
-		private String tuesdayAfter = "16";
-		private String wednesdayBefore = "8";
-		private String wednesdayAfter = "16";
-		private String thursdayBefore = "8";
-		private String thursdayAfter = "16";
-		private String fridayBefore = "8";
-		private String fridayAfter = "16";
-		private String saturdayBefore = "8";
-		private String saturdayAfter = "16";
-		private String sundayAfter = "16";
-		private String sundayBefore = "8";
+		private String mondayBefore;
+		private String mondayAfter;
+		private String tuesdayBefore;
+		private String tuesdayAfter;
+		private String wednesdayBefore;
+		private String wednesdayAfter;
+		private String thursdayBefore;
+		private String thursdayAfter;
+		private String fridayBefore;
+		private String fridayAfter;
+		private String saturdayBefore;
+		private String saturdayAfter;
+		private String sundayAfter;
+		private String sundayBefore;
 
 		public CurfewConfigDesc() {
 			load();
