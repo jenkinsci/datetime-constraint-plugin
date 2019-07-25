@@ -1,0 +1,12 @@
+pipeline {
+	agentany
+	stages {
+		stage() {
+			steps {
+				script {
+					curfew()
+				}
+			}
+		}
+	}
+};
