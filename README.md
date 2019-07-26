@@ -23,9 +23,9 @@ Curfew is a Jenkins plugin that enables you to set (configurable through the UI)
 
 ```
 pipeline {
-  agentany
+  agent any
   stages {
-    stage() {
+    stage('curfew') {
       steps {
         script {
           curfew()
@@ -33,22 +33,22 @@ pipeline {
       }
     }
   }
-};
+}
 ```
 
 **Scripted Pipeline**
 
 ```
 node {
-  stage() {
+  stage('curfew') {
     curfew()
   }
-};
+}
 ```
 
 ## Showcase
 
-Following you will find a demonstration of what the prompt for manual approval, in case someone triggers the pipeline outside of the allowed timeframe:
+Following you will find a demonstration of what the prompt for manual approval looks like, in case someone triggers the pipeline outside of the allowed timeframe:
 
 <img src="./screenshots/pipeline_abort.png" width="350" alt="Curfew UI Demo">
 
