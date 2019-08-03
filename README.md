@@ -1,4 +1,4 @@
-# Curfew
+https://github.com/Jouda-Hidri/curfew-hpi/blob/master/0.1.0/curfew.hpi?raw=true# Curfew
 
 Curfew is a Jenkins plugin that enables you to set (configurable through the UI) time restrictions, that can be applied to any stage in the pipeline, by simply calling the method `curfew()`. If someone triggers a Jenkins pipeline outside of your allowed timeframe, the pipeline will be aborted, unless manually approved through the UI prompt.
 
@@ -9,8 +9,10 @@ Curfew is a Jenkins plugin that enables you to set (configurable through the UI)
 
 ## Getting started
 
-* Install the plugin within Jenkins
-* Go to **Manage Jenkins** > **Configure System**
+* Download the hpi file locally: [click here](https://github.com/Jouda-Hidri/curfew-hpi/blob/master/0.1.0/curfew.hpi?raw=true)
+* Go to **Manage Jenkins** > **Manage Plugins** > **Advanced** > **Upload plugin**
+* Click on **choose file**, navigate to where you download the .hpi file and select it. Curfew will be now installed as a plugin within Jenkins.
+* Go back to **Manage Jenkins** > **Configure System**
 * Find Curfew and set your configuration (timezone, restricted times/days).
 * In your Jenkinsfile simply call `curfew` at any stage
 
