@@ -1,4 +1,4 @@
-https://github.com/Jouda-Hidri/curfew-hpi/blob/master/0.1.0/curfew.hpi?raw=true# Curfew
+# Curfew
 
 Curfew is a Jenkins plugin that enables you to set (configurable through the UI) time restrictions, that can be applied to any stage in the pipeline, by simply calling the method `curfew()`. If someone triggers a Jenkins pipeline outside of your allowed timeframe, the pipeline will be aborted, unless manually approved through the UI prompt.
 
@@ -53,6 +53,9 @@ node {
 Following you will find a demonstration of what the prompt for manual approval looks like, in case someone triggers the pipeline outside of the allowed timeframe:
 
 <img src="./screenshots/pipeline_abort.png" width="350" alt="Curfew UI Demo">
+
+## Contact
+hidrijouda@gmail.com
 
 ## License
 This project is licensed under the MIT License.
