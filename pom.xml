@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>datetime-constraint</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>hpi</packaging>
     <properties>
         <jenkins.version>2.164.3</jenkins.version>
@@ -64,4 +64,8 @@
 	    </plugins>
     </build>
 
+
+  <scm>
+    <tag>datetime-constraint-0.1.0</tag>
+  </scm>
 </project>
