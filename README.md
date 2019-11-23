@@ -1,6 +1,6 @@
-# Curfew
+# datetime-constraint
 
-Curfew is a Jenkins plugin that enables you to set (configurable through the UI) time restrictions, that can be applied to any stage in the pipeline, by simply calling the method `curfew()`. If someone triggers a Jenkins pipeline outside of your allowed timeframe, the pipeline will be aborted, unless manually approved through the UI prompt.
+datetime-constraint is a Jenkins plugin that enables you to set time restrictions (configurable through the UI), that can be applied to any stage in the pipeline, by simply calling the method `curfew()`. If someone triggers a Jenkins pipeline outside of your allowed timeframe, the pipeline will be aborted, unless manually approved through the UI prompt.
 
 ### Contents
 1. [Getting started](#Getting-started)
@@ -9,12 +9,13 @@ Curfew is a Jenkins plugin that enables you to set (configurable through the UI)
 
 ## Getting started
 
-* Download the hpi file locally: [click here](https://github.com/Jouda-Hidri/curfew-hpi/blob/master/0.1.0/curfew.hpi?raw=true)
-* Go to **Manage Jenkins** > **Manage Plugins** > **Advanced** > **Upload plugin**
-* Click on **choose file**, navigate to where you download the .hpi file and select it. Curfew will be now installed as a plugin within Jenkins.
-* Go back to **Manage Jenkins** > **Configure System**
-* Find Curfew and set your configuration (timezone, restricted times/days).
-* In your Jenkinsfile simply call `curfew` at any stage
+* Go to **Manage Jenkins** > **Manage Plugins** > **Available**
+* Filter for `datetime-constraint`.
+* Click `Install without restart.`
+* Find `Curfew` and set your configuration (timezone, restricted times/days).
+* In your Jenkinsfile simply call `curfew()` at any stage.
+
+If you need more help you can also read the [official Jenkins guide for plugin installation](https://jenkins.io/doc/book/managing/plugins/).
 
 **Settings example:** (Mon-Thu prevent before 08:00 and after 16:00, Fri time restriction all day, no restrictions Sat-Sun).
 <img src="./screenshots/config_example.png" width="800" alt="Curfew UI Demo">

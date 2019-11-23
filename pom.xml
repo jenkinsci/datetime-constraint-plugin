@@ -35,14 +35,20 @@
             <url>https://opensource.org/licenses/MIT</url>
         </license>
     </licenses>
-    <!-- Assuming you want to host on @jenkinsci:
-    <url>https://wiki.jenkins.io/display/JENKINS/TODO+Plugin</url>
-    <scm>
-        <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
-    </scm>
-    -->
+	<url>http://github.com/jenkinsci/datetime-constraint-plugin</url>
+	<scm>
+		<connection>scm:git:git://github.com/jenkinsci/datetime-constraint-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:jenkinsci/datetime-constraint-plugin.git</developerConnection>
+		<url>https://github.com/jenkinsci/datetime-constraint-plugin</url>
+		<tag>HEAD</tag>
+	</scm>
+	<developers>
+		<developer>
+			<id>joudahidri</id>
+			<name>Jouda Hidri</name>
+			<email>hidrijouda@gmail.com</email>
+		</developer>
+	</developers>
     <repositories>
         <repository>
             <id>repo.jenkins-ci.org</id>
@@ -63,12 +69,4 @@
 	    	</plugin>
 	    </plugins>
     </build>
-
-
-  <scm>
-    <connection>scm:git:git://github.com/jenkinsci/datetime-constraint-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/datetime-constraint-plugin.git</developerConnection>
-    <url>https://github.com/jenkinsci/datetime-constraint-plugin</url>
-    <tag>HEAD</tag>
-  </scm>
 </project>
