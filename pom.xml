@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>datetime-constraint</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <properties>
         <jenkins.version>2.164.3</jenkins.version>
@@ -40,7 +40,7 @@
 		<connection>scm:git:git://github.com/jenkinsci/datetime-constraint-plugin.git</connection>
 		<developerConnection>scm:git:git@github.com:jenkinsci/datetime-constraint-plugin.git</developerConnection>
 		<url>https://github.com/jenkinsci/datetime-constraint-plugin</url>
-		<tag>datetime-constraint-0.1.2</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<developers>
 		<developer>
