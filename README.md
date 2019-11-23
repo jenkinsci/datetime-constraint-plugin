@@ -1,5 +1,8 @@
 # datetime-constraint
 
+[![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/datetime-constraint.svg)](https://plugins.jenkins.io/datetime-constraint)
+
+
 datetime-constraint is a Jenkins plugin that enables you to set time restrictions (configurable through the UI), that can be applied to any stage in the pipeline, by simply calling the method `curfew()`. If someone triggers a Jenkins pipeline outside of your allowed timeframe, the pipeline will be aborted, unless manually approved through the UI prompt.
 
 ### Contents
